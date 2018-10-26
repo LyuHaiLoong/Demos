@@ -1,0 +1,229 @@
+ /* ------------reset------------ */
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            min-width: 1000px;
+            height: 100%;
+            min-height: 400px;
+            overflow: hidden;
+        }
+        /*  ------------画布 ------------ */
+        /* 遮罩层 */
+        
+        #mask {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .8);
+            z-index: 900;
+        }
+        /* 天空背景 */
+        
+        #sky {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 150, 255, 1), rgba(0, 150, 255, .8), rgba(0, 150, 255, .5));
+        }
+        /* 月亮 */
+        
+        #moon {
+            position: absolute;
+            top: 50px;
+            right: 200px;
+            width: 120px;
+            height: 120px;
+            background: rgba(251, 255, 25, 0.938);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(251, 255, 25, 0.5);
+            z-index: 9999;
+        }
+        /* 闪烁星星 */
+        
+        .blink {
+            position: absolute;
+            background: rgb(255, 255, 255);
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgb(255,255,255);
+            opacity: 0;
+            z-index: 10000;
+            animation: blingbling 2s linear infinite;
+        }
+        /* 流星 */
+        
+        .star {
+            position: absolute;
+            opacity: 0;
+            animation: fall 5s linear infinite;
+            z-index: 10000;
+        }
+        
+        .star::after {
+            content: "";
+            display: block;
+            border: solid;
+            border-width: 2px 0 2px 80px;
+            /*流星随长度逐渐缩小*/
+            border-color: transparent transparent transparent rgba(255, 255, 255, 1);
+            border-radius: 2px 0 0 2px;
+            transform: rotate(-45deg);
+            transform-origin: 0 0 0;
+            box-shadow: 0 0 20px rgba(255, 255, 255, .3);
+        }
+        /* 云 */
+        
+        .cloud {
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            /* background: #fff; */
+            animation: float 2s linear infinite;
+        }
+        
+        .cloud-1 {
+            bottom: -50px;
+            z-index: 1000;
+            opacity: 1;
+            animation-delay: 1s;
+        }
+        
+        .cloud-2 {
+            left: -100px;
+            bottom: -50px;
+            z-index: 999;
+            opacity: .5;
+            transform: rotate(7deg);
+            animation-delay: 1.4s;
+        }
+        
+        .cloud-3 {
+            left: 120px;
+            bottom: -50px;
+            z-index: 999;
+            opacity: .1;
+            transform: rotate(-10deg);
+            animation-delay: 1.8s;
+        }
+        
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: #fff;
+        }
+        
+        .circle-1 {
+            width: 100px;
+            height: 100px;
+            top: -50px;
+            left: 10px;
+        }
+        
+        .circle-2 {
+            width: 150px;
+            height: 150px;
+            top: -50px;
+            left: 30px;
+        }
+        
+        .circle-3 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: 80px;
+        }
+        
+        .circle-4 {
+            width: 200px;
+            height: 200px;
+            top: -60px;
+            left: 300px;
+        }
+        
+        .circle-5 {
+            width: 80px;
+            height: 80px;
+            top: -30px;
+            left: 450px;
+        }
+        
+        .circle-6 {
+            width: 200px;
+            height: 200px;
+            top: -50px;
+            left: 500px;
+        }
+        
+        .circle-7 {
+            width: 100px;
+            height: 100px;
+            top: -10px;
+            left: 650px;
+        }
+        
+        .circle-8 {
+            width: 50px;
+            height: 50px;
+            top: 30px;
+            left: 730px;
+        }
+        
+        .circle-9 {
+            width: 100px;
+            height: 100px;
+            top: 30px;
+            left: 750px;
+        }
+        
+        .circle-10 {
+            width: 150px;
+            height: 150px;
+            top: 10px;
+            left: 800px;
+        }
+        
+        .circle-11 {
+            width: 150px;
+            height: 150px;
+            top: -30px;
+            left: 850px;
+        }
+        
+        .circle-12 {
+            width: 250px;
+            height: 250px;
+            top: -50px;
+            left: 900px;
+        }
+        
+        .circle-13 {
+            width: 200px;
+            height: 200px;
+            top: -40px;
+            left: 1000px;
+        }
+        
+        .circle-14 {
+            width: 300px;
+            height: 300px;
+            top: -70px;
+            left: 1100px;
+        }
+
+    /*动画*/
+    /*云*/
+    /*@keyframes float {
+        0% {
+            bottom: -50px;
+        }
+        50% {
+            bottom: -45px;
+        }
+        100% {
+            bottom: -50px;
+        }
+    }*/
