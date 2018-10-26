@@ -1,0 +1,2580 @@
+/*reset css*/
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font: 12px/1.5 'PingFangSC', 'helvetica neue', 'hiragino sans gb', 'arial', 'microsoft yahei ui', 'microsoft yahei', 'simsun', 'sans-serif';
+    overflow-x: hidden;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    clear: both;
+}
+
+.flex-box {
+    display: flex;
+}
+
+
+/*------------------------------------------------------------导航栏------------------------------------------------------*/
+
+
+/*公共样式*/
+
+.home-wrap {
+    position: relative;
+    width: 100%;
+    min-width: 1000px;
+    height: 640px;
+    color: #fff;
+    background: #000;
+    z-index: 0;
+}
+
+.home-wrap a {
+    font-size: 14px;
+    color: #fff;
+    /*line-height: 50px;*/
+    /*因为*通配符中设置了line-height1.5，通配符权重大于父元素继承，所以需单独设置a的line-height才能达到居中效果*/
+    /*改为body设置字体样式，不在通配符中设置*/
+}
+
+nav {
+    border-bottom: 1px solid hsla(0, 0%, 100%, .15);
+}
+
+nav li {
+    cursor: pointer;
+}
+
+.nav-left {
+    height: 50px;
+    line-height: 50px;
+    float: left;
+}
+
+.nav-right {
+    height: 50px;
+    line-height: 50px;
+    float: right;
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*导航栏1*/
+
+
+/*折叠菜单样式*/
+
+.menu {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-right: 1px solid hsla(0, 0%, 100%, .15);
+    font-size: 0;
+    /*设置vertical-align垂直居中显示*/
+}
+
+.menu img {
+    width: 18px;
+    vertical-align: middle;
+}
+
+
+/*logo样式*/
+
+.logo {
+    height: 50px;
+    /*line-height设置a标签居中的话，因为line-height居中的特性，a在float后属性变为inline-block，高度变为父元素.logo的高度。*/
+    /*此时，因为img动图position定位为top0、left0。所以设置line-height=height的话，动图位置不发生变化，而静态图片位置居中。不如直接设置a标签margin，整体移动简单便捷*/
+}
+
+
+/*---|---*/
+
+.logo a {
+    /*---|---*/
+    position: relative;
+    /*---|---*/
+    width: 80px;
+    /*---|---*/
+    line-height: normal;
+    /*清除.nav-left的line-height设置*/
+    margin-top: 16px;
+    /*通过margin调整垂直位置*/
+    margin-left: 9px;
+}
+
+.logo a img {
+    width: 100%;
+}
+
+.logo a img:last-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/*搜索栏*/
+
+.search {
+    position: relative;
+    margin-right: -0.5px;
+    /*width: 200px;
+	height: 50px;
+	background: hsla(0,0%,100%,.12);*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.search input {
+    /*width: 100%;
+	height: 100%;*/
+    width: 200px;
+    height: 50px;
+    padding-left: 16px;
+    padding-right: 24px;
+    font-size: 14px;
+    color: #fff;
+    /*background: transparent;*/
+    background: hsla(0, 0%, 100%, .12);
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+
+/*设置placeholder字体属性*/
+
+.search input::-webkit-input-placeholder {
+    color: #bbb;
+}
+
+.search-icon {
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    width: 16px;
+    height: 16px;
+    background: url("https://img.alicdn.com/tfs/TB169ppCFOWBuNjy0FiXXXFxVXa-32-32.png") top left/cover no-repeat;
+    opacity: .8;
+    cursor: pointer;
+}
+
+
+/*导航列表*/
+
+
+/*float:right后ol与li在文档流同一层，所以不用再设置overflow属性*/
+
+nav ol li {
+    padding: 0 12px;
+}
+
+.shopping-icon {
+    display: inline-block;
+    width: 20px;
+    height: 18px;
+    margin-top: -3px;
+    margin-right: 4px;
+    vertical-align: middle;
+    background: url("https://img.alicdn.com/tfs/TB1X8fbB1OSBuNjy0FdXXbDnVXa-40-36.png") top left/cover no-repeat;
+}
+
+.triangle-icon-down {
+    float: right;
+    width: 8px;
+    height: 8px;
+    margin-top: 17px;
+    margin-left: 11px;
+    margin-right: 1px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*导航栏2*/
+
+nav ul {
+    margin-left: 10px;
+}
+
+nav ul li {
+    padding: 0 16px;
+}
+
+nav button {
+    padding: 0 32px;
+    background: #00c1de;
+    border: none;
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*背景图*/
+
+.banner-wrap {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    line-height: 50px;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.banner-headline-position {
+    position: absolute;
+    top: 180px;
+    left: 31.5px;
+}
+
+.banner-headline-position h1 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 50px;
+    margin-bottom: 12px;
+}
+
+.banner-headline-position p {
+    font-size: 20px;
+    line-height: 36px;
+}
+
+.banner-headline-position button {
+    height: 36px;
+    line-height: 20px;
+    margin-top: 40px;
+    font-size: 20px;
+    background: transparent;
+    /*	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;*/
+    border: none;
+    border-bottom: 3px solid #00c1de;
+}
+
+.banner-headline-position a {
+    font-size: 20px;
+    /*字体大小与line-height相等，等于height=line-height*/
+    line-height: 20px;
+    font-weight: 400;
+}
+
+
+/*三角小图标*/
+
+.triangle-icon-right {
+    float: right;
+    width: 9px;
+    height: 9px;
+    margin-top: 5px;
+    margin-left: 8px;
+    margin-right: 5px;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+
+/*隐藏*/
+
+.banner-hidden {
+    visibility: hidden;
+}
+
+
+/*背景图设置*/
+
+.banner-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*由于继承了line-height和本身字体大小的原因，.bg-img由于未设置固定高度，受文字对齐的影响，高度高于640px*/
+    z-index: -2;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.banner-bg-img img,
+.banner-bg-img video {
+    width: 1920px;
+    /*overflow: hidden;*/
+}
+
+.banner-img-right img {
+    position: absolute;
+    top: 0;
+    left: -328.5px;
+}
+
+.banner-img-right img[alt="breath"] {
+    opacity: .2;
+}
+
+
+/*切换标签设置*/
+
+
+/*标签及单选框位置*/
+
+.banner-tab {
+    position: absolute;
+    bottom: 151.5px;
+    left: 50%;
+    width: 40px;
+    height: 4px;
+    background: rgba(255, 255, 255, .2);
+    z-index: 999;
+}
+
+.banner-radio {
+    position: absolute;
+    bottom: 145px;
+    left: 50%;
+    width: 40px;
+    height: 20px;
+    z-index: 9999;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.banner-tab-move {
+    position: absolute;
+    bottom: 151.5px;
+    left: 50%;
+    width: 40px;
+    height: 4px;
+    background: #fff;
+    z-index: 9998;
+    visibility: hidden;
+}
+
+.banner-tab1,
+.banner-radio1,
+.banner-tab-move1 {
+    margin-left: -120px;
+}
+
+.banner-tab2,
+.banner-radio2,
+.banner-tab-move2 {
+    margin-left: -70px;
+}
+
+.banner-tab3,
+.banner-radio3,
+.banner-tab-move3 {
+    margin-left: -20px;
+}
+
+.banner-tab4,
+.banner-radio4,
+.banner-tab-move4 {
+    margin-left: 30px;
+}
+
+.banner-tab5,
+.banner-radio5,
+.banner-tab-move5 {
+    margin-left: 80px;
+}
+
+
+/*单选框选择动画*/
+
+.banner-radio:checked+span {
+    visibility: visible;
+}
+
+.banner-radio:checked+span+span+section {
+    visibility: visible;
+}
+
+
+/*.banner-tab {
+	position: absolute;
+	bottom: 143.5px;
+	left: 50%;
+	margin-left: -125px;
+}*/
+
+
+/*.banner-tab-list	{
+	position: relative;
+	float: left;
+	width: 40px;
+	height: 4px;
+	margin: 0 5px;
+	padding: 8px 0;
+	box-sizing: content-box;
+	background: rgba(255,255,255,.2);
+	background-clip: content-box;
+}*/
+
+
+/*.banner-tab-list input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 20px;
+	opacity: 0;
+	cursor: pointer;
+	z-index: 999999;
+}*/
+
+
+/*.tab-move {
+	position: absolute;
+	top: 8px;
+	left: 0;
+	width: 0;
+	height: 4px;
+	background: #fff;
+}*/
+
+
+/*.banner-tab-list:first-child span{
+	width: 100%;
+	-webkit-transition: all 5s linear;
+	-moz-transition: all 5s linear;
+	-ms-transition: all 5s linear;
+	-o-transition: all 5s linear;
+	transition: all 5s linear;
+}*/
+
+
+/*.banner-tab-list input:checked+span {
+	width: 100%;
+}*/
+
+
+/*------------------------------------------------------*/
+
+
+/*底部设置*/
+
+.home-page-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    min-width: 1000px;
+    height: 136px;
+    background: hsla(0, 0%, 100%, .1);
+}
+
+.home-page-footer ul {
+    min-width: 1000px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.home-page-footer ul li {
+    float: left;
+    width: 20%;
+    box-sizing: border-box;
+    border-left: 1px solid hsla(0, 0%, 100%, .06);
+}
+
+.home-page-footer ul li:last-child {
+    border-right: 1px solid hsla(0, 0%, 100%, .06);
+    ;
+}
+
+.home-page-footer ul li a {
+    display: block;
+    height: 136px;
+    padding: 30px 26px 24px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.home-page-footer ul li a h2 {
+    height: 18px;
+    font-size: 16px;
+    font-weight: bolder;
+    margin-bottom: 8px;
+}
+
+.home-page-footer ul li a p {
+    line-height: 24px;
+    font-size: 14px;
+    opacity: .6;
+}
+
+
+/*------------------------------------------------------------展品体系展示区------------------------------------------------------*/
+
+
+/*------------------------------------------------------*/
+
+
+/*----------模块包裹层-通用样式----------*/
+
+.module-wrap {
+    /*!*position: relative;*!   更改定位盒子为must-animation-wrap*/
+    width: 100%;
+    min-width: 1000px;
+    background: #fff;
+    text-align: center;
+}
+
+
+/*
+本来想统一各模块标题，但是各模块标题并不一致
+.module-wrap-title {
+	line-height: 36px;
+	color: #373d41;
+	font-size: 24px;
+	font-weight: 500;
+}
+.module-wrap-sub-title {
+	display: block;
+	color: #373d41;
+	font-size: 16px;
+	margin: 8px 0 42px;
+}*/
+
+
+/*------------------------------------------------------*/
+
+
+/*logo*/
+
+.ali-product-logo {
+    vertical-align: middle;
+    /*display: block;     !*与vertical-align效果一致，原理都是取消基线对齐的影响。vertical-align比较display方法的有点在于，受父元素text-align:center影响，无需设置margin就能使图片居中*!*/
+    width: 130px;
+    margin: 32px auto 24px;
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*title*/
+
+.ali-product-title {
+    line-height: 36px;
+    color: #373d41;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.ali-product-sub-title {
+    display: block;
+    color: #373d41;
+    font-size: 16px;
+    margin: 8px 0 42px;
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*ali-product行包裹层*/
+
+.ali-product-layer {
+    width: 100%;
+}
+
+
+/*列表项设置*/
+
+
+/*居中*/
+
+.ali-product-layer ul {
+    min-width: 1000px;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+/*浮动*/
+
+.ali-product-tab {
+    float: left;
+    width: 20%;
+    padding: 15px 39px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/*链接*/
+
+.ali-product-tab a {
+    display: block;
+    color: #373d41;
+    font-size: 14px;
+}
+
+
+/*背景展示区*/
+
+.ali-product-tab span {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+}
+
+
+/*背景逐个设置*/
+
+.ali-product-tab a[data-1] span {
+    background: url("https://img.alicdn.com/tfs/TB1fk0RQVXXXXajXVXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-2] span {
+    background: url("https://img.alicdn.com/tfs/TB1oCR6QVXXXXXXXFXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-3] span {
+    background: url("https://img.alicdn.com/tfs/TB1kZRHQVXXXXX.aXXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-4] span {
+    background: url("https://img.alicdn.com/tfs/TB1UeN.QVXXXXX1XFXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-5] span {
+    background: url("https://img.alicdn.com/tfs/TB1Qr4RQVXXXXbvXVXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-6] span {
+    background: url("https://img.alicdn.com/tfs/TB1EnOXQVXXXXcUXpXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-7] span {
+    background: url("https://img.alicdn.com/tfs/TB1txh6QVXXXXaVXFXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-8] span {
+    background: url("https://img.alicdn.com/tfs/TB1XYlAQVXXXXc1aXXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-9] span {
+    background: url("https://img.alicdn.com/tfs/TB15q1mQVXXXXc6XXXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-10] span {
+    background: url("https://img.alicdn.com/tfs/TB1JomaQVXXXXaMXFXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-11] span {
+    background: url("https://img.alicdn.com/tfs/TB1ylFIQVXXXXXSaXXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-12] span {
+    background: url("https://img.alicdn.com/tfs/TB1FmxFQVXXXXbjaXXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-13] span {
+    background: url("https://img.alicdn.com/tfs/TB1xQKXQVXXXXcKXpXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-14] span {
+    background: url("https://img.alicdn.com/tfs/TB1OalFQVXXXXaIaXXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-15] span {
+    background: url("https://img.alicdn.com/tfs/TB12iJnQVXXXXaoXVXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-16] span {
+    background: url("https://img.alicdn.com/tfs/TB1zCFIQVXXXXcKXVXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-17] span {
+    background: url("https://img.alicdn.com/tfs/TB1GBxKQVXXXXXTaXXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-18] span {
+    background: url("https://img.alicdn.com/tfs/TB1HFw4SFXXXXctaXXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+.ali-product-tab a[data-19] span {
+    background: url("https://img.alicdn.com/tfs/TB1NACtQVXXXXXlXpXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*底部按钮*/
+
+
+/*.ali-product-up-down {
+	position: relative;   !*设置absolute后元素脱离文档流，宽度不再为包裹层的100%，导致button按钮不再居中显示。通过设置宽度100%，可以实现再次居中*! !*设置底部覆盖上一层*!
+	!*margin-top: -130.67px;*!
+}*/
+
+.ali-product-up,
+.ali-product-up+div+button,
+.ali-product-down,
+.ali-product-down+input+div+button+button {
+    width: 120px;
+    height: 36px;
+    /*margin: 35px auto 40px;*/
+    color: #373d41;
+    font-size: 14px;
+    line-height: 36px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border: 1px solid #373d41;
+    background: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.ali-product-down,
+.ali-product-down+input+div+button+button,
+.ali-product-up,
+.ali-product-up+div+button {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    margin-left: -61px;
+    background: #fff;
+    z-index: 2;
+}
+
+.ali-product-down,
+.ali-product-up {
+    opacity: 0;
+    z-index: 3;
+    /*button与input位于同一层级，失去标准文档流中的上下级关系，需单独声明input 位于button上*/
+}
+
+.button-bg-move {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 113px;
+    background: #fff;
+    z-index: 1;
+}
+
+.ali-product-down:checked,
+.ali-product-down:checked+input+div+button {
+    display: none;
+}
+
+.ali-product-up:checked,
+.ali-product-up:checked+div+button+button {
+    display: none;
+}
+
+
+/*------------------------------------------------------------展品体系展示区------------------------------------------------------*/
+
+
+/*------------------------------------------------------*/
+
+
+/*方案卡滑动页面*/
+
+.slider-wrap {
+    width: 340%;
+    font-size: 0;
+    /*	overflow: hidden;   用body{overflow:gidden;}替代*/
+}
+
+.module-wrap-slider {
+    position: relative;
+}
+
+
+/*.slider-wrap ul {
+	width: 220%;  用body{overflow:gidden;}替代
+}*/
+
+.slider-item {
+    position: relative;
+    float: left;
+    width: 5.88235%;
+    height: 368.375px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.slider-item[data-keywords="ecommerce"] {
+    background: url("https://img.alicdn.com/tps/TB16hkwLXXXXXX6XXXXXXXXXXXX-576-840.jpg") 0 0/cover no-repeat;
+}
+
+
+/*.slider-item a{
+	display: block;
+	overflow: hidden;
+}*/
+
+.slider-item .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #161a1d;
+    opacity: .6;
+}
+
+.slider-item .slider-content {
+    width: 100%;
+    position: absolute;
+    top: 100px;
+}
+
+.slider-item .slider-content .slider-content-logo {
+    position: relative;
+    width: 100%;
+    height: 63px;
+    /*设置position后，必须显性声明宽高，无法通过子元素撑起父元素*/
+}
+
+.slider-item .slider-content .slider-content-logo img {
+    width: 25%;
+}
+
+.slider-item .slider-content .slider-content-logo img:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.slider-item .slider-content .slider-content-line {
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    margin-top: 20px;
+    background: #fff;
+    opacity: 1;
+}
+
+.slider-item .slider-content .slider-content-title {
+    margin-top: 24px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 24px;
+}
+
+.slider-item .slider-content .slider-content-desc {
+    height: 72px;
+    margin-top: 30px;
+    padding: 0 23px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 24px;
+    opacity: 0;
+}
+
+.slider-item .slider-content button {
+    width: 120px;
+    height: 36px;
+    margin-top: 62px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 36px;
+    background: none;
+    border: 1px solid #fff;
+    outline: none;
+}
+
+
+/*背景*/
+
+.slider-item .mask-darker {
+    opacity: .82;
+}
+
+.slider-item[data-keywords="ecommerce"] {
+    background: url("https://img.alicdn.com/tps/TB16hkwLXXXXXX6XXXXXXXXXXXX-576-840.jpg") 1px 0/cover no-repeat;
+}
+
+.slider-item[data-keywords="app"] {
+    background: url("https://img.alicdn.com/tps/TB19Jz6LXXXXXacaXXXXXXXXXXX-576-840.jpg") 0 0/cover no-repeat;
+}
+
+.slider-item[data-keywords="game"] {
+    background: url("https://img.alicdn.com/tps/TB1dDT4LXXXXXabaXXXXXXXXXXX-576-840.jpg") 0 0/cover no-repeat;
+}
+
+.slider-item[data-keywords="web"] {
+    background: url("https://img.alicdn.com/tps/TB1erQpLXXXXXa7XpXXXXXXXXXX-576-840.jpg") 0 0/cover no-repeat;
+}
+
+.slider-item[data-keywords="media"] {
+    background: url("https://img.alicdn.com/tps/TB1PVwkLXXXXXagXFXXXXXXXXXX-576-840.jpg") 0 0/cover no-repeat;
+}
+
+.slider-item[data-keywords="inance"] {
+    background: url("https://img.alicdn.com/tps/TB1RJ_8LXXXXXX9aXXXXXXXXXXX-576-840.jpg") 0 0/cover no-repeat;
+}
+
+.slider-item[data-keywords="healthcare"] {
+    background: url("https://img.alicdn.com/tps/TB1C8gpLXXXXXaWXpXXXXXXXXXX-576-840.jpg") 0 0/cover no-repeat;
+}
+
+.slider-item[data-keywords="rendering"] {
+    background: url("https://img.alicdn.com/tps/TB1WMouLXXXXXciXXXXXXXXXXXX-576-840.jpg") 0 0/cover no-repeat;
+}
+
+.slider-item[data-keywords="o2o"] {
+    background: url("https://img.alicdn.com/tps/TB1xmb3LXXXXXbXaXXXXXXXXXXX-576-840.jpg") 0 0/cover no-repeat;
+}
+
+.slider-item[data-keywords="govcloud"] {
+    background: url("https://img.alicdn.com/tps/TB1VqEvLXXXXXb2XXXXXXXXXXXX-576-840.jpg") 0 0/cover no-repeat;
+}
+
+.slider-item[data-keywords="iot"] {
+    background: url("https://img.alicdn.com/tps/TB1ty_YLXXXXXX4apXXXXXXXXXX-576-840.jpg") 0 0/cover no-repeat;
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*换页箭头*/
+
+.slider-btn {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    /*cursor: pointer; 不起作用*/
+}
+
+.slider-left {
+    left: 0;
+}
+
+.slider-right {
+    right: 0;
+}
+
+.slider-btn button {
+    width: 100%;
+    height: 100%;
+    background: rgba(22, 26, 29, .3);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+i[class^="slider-arrow"] {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    border-top: 2px solid #fff;
+}
+
+.slider-arrow-left {
+    border-left: 2px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.slider-arrow-right {
+    border-right: 2px solid #fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.module-wrap-slider:hover .slider-btn {
+    display: block;
+}
+
+
+/*------------------------------------------------------------软件与服务------------------------------------------------------*/
+
+
+/*------------------------------------------------------*/
+
+
+/*标题设置*/
+
+.ali-main-service {
+    padding: 76px 0;
+}
+
+.main-service-title {
+    line-height: 36px;
+    color: #373d41;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.main-service-sub-title {
+    display: block;
+    color: #5f6367;
+    font-size: 16px;
+    margin: 12px 0 67px;
+}
+
+
+/*flex布局尝试  阮一峰http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html*/
+
+.layout-flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 1000px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.flex-item {
+    width: 33.3%;
+    height: 200px;
+    margin: 10px 0;
+    /*margin要设置成0，不然由于宽度计算的误差，margin-left和margin-right会补全误差值*/
+    font-size: 0;
+}
+
+.flex-item h2 a {
+    display: inline-block;
+    color: #373d41;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.flex-item span {
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    margin: auto;
+}
+
+.layout-flex-item {
+    display: flex;
+    /*width: 33.333%;*/
+    margin: 10px auto 0;
+}
+
+.layout-flex-item li {
+    /*设置空间剩余分配-均分*/
+    flex-grow: 1;
+}
+
+.layout-flex-item li:nth-child(2) {
+    /*设置剩余空间分配-不参与分配*/
+    flex-grow: 0;
+}
+
+.layout-flex-item a {
+    /*width: 105px;*/
+    display: block;
+    color: #a9b0b4;
+    font-size: 14px;
+    /*text-align: left;*/
+    /*-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;*/
+}
+
+.layout-flex-item .flex-left-line:before {
+    content: '|';
+    padding: 0 5px 0;
+}
+
+.flex-text-left {
+    text-align: left;
+}
+
+.flex-text-right {
+    text-align: right;
+}
+
+.flex-text-center {
+    text-align: center;
+}
+
+
+/*背景图标*/
+
+.flex-item span[data-main-service-1] {
+    background: url("https://img.alicdn.com/tps/TB1ceKWLXXXXXaEapXXXXXXXXXX-150-9000.jpg") 0 0/cover no-repeat;
+}
+
+.flex-item span[data-main-service-2] {
+    background: url("https://img.alicdn.com/tps/TB1sd_fLXXXXXX2XFXXXXXXXXXX-150-9000.jpg") 0 0/cover no-repeat;
+}
+
+.flex-item span[data-main-service-3] {
+    background: url("https://img.alicdn.com/tps/TB1icTcLXXXXXclXFXXXXXXXXXX-150-9000.jpg") 0 0/cover no-repeat;
+}
+
+.flex-item span[data-main-service-4] {
+    background: url("https://img.alicdn.com/tps/TB1l3YmLXXXXXb9XXXXXXXXXXXX-150-9000.jpg") 0 0/cover no-repeat;
+}
+
+.flex-item span[data-main-service-5] {
+    background: url("https://img.alicdn.com/tps/TB1.1fkLXXXXXXrXpXXXXXXXXXX-150-9000.jpg") 0 0/cover no-repeat;
+}
+
+.flex-item span[data-main-service-6] {
+    background: url("https://img.alicdn.com/tps/TB1heGZLXXXXXaeapXXXXXXXXXX-150-9000.jpg") 0 0/cover no-repeat;
+}
+
+
+/*------------------------------------------------------------技术社区------------------------------------------------------*/
+
+
+/*------------------------------------------------------*/
+
+
+/*单独wrap层设置*/
+
+.module-wrap-community {
+    padding: 80px 0;
+    background: #f5f5f5;
+}
+
+.module-wrap-community h1 {
+    color: #000;
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*展示项目wrap*/
+
+.community-wrap {
+    max-width: 1200px;
+    min-width: 100px;
+    margin: 68px auto 0;
+}
+
+
+/*展示模块wrap*/
+
+.community-pannel {
+    float: left;
+    width: 33.33%;
+    padding: 0 10px;
+    text-align: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+/*图片展示样式设置*/
+
+.community-item-show {
+    height: 230px;
+    margin-bottom: 20px;
+    background: #fff;
+    border: 1px solid #c5d8db;
+}
+
+.community-img-box {
+    height: 170px;
+    overflow: hidden;
+}
+
+.community-img-box img {
+    width: 100%;
+}
+
+.community-item-show p {
+    padding: 18px 25px;
+    color: #373d41;
+    font-size: 14px;
+}
+
+
+/*展示列表项样式*/
+
+.community-item-list a {
+    display: block;
+    color: #373d41;
+    font-size: 14px;
+    line-height: 2;
+}
+
+
+/*------------------------------------------------------------网站防御------------------------------------------------------*/
+
+
+/*------------------------------------------------------*/
+
+
+/*wrap层设置*/
+
+.ali-defence-wrap {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding-top: 32px;
+    text-align: center;
+    background: #00c1de;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ali-defence-wrap a {
+    position: relative;
+    color: #fff;
+    font-size: 24px;
+    z-index: 1;
+}
+
+.ali-defence-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url("https://img.alicdn.com/tps/TB1X5DsLXXXXXcsXpXXXXXXXXXX-1440-590.svg") 0 -70.15px/cover no-repeat;
+    opacity: .5;
+    z-index: 0;
+}
+
+
+/*------------------------------------------------------------全球布局------------------------------------------------------*/
+
+
+/*------------------------------------------------------*/
+
+
+/*wrap层单独样式*/
+
+.module-wrap-global {
+    margin: 80px 0 50px;
+}
+
+.module-wrap-global .main-service-sub-title {
+    margin-bottom: 60px;
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*地图样式*/
+
+.global-wrap {
+    position: relative;
+    /*min-width: 1000px;*/
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.global-map {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.global-map img {
+    width: 100%;
+}
+
+
+/*点样式*/
+
+.point-dot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    margin: auto;
+    background: #6ad7e9;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 205, 236, .37);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+
+/*位置*/
+
+.global-map-point {
+    position: absolute;
+}
+
+.point-position-1 {
+    top: 165px;
+    left: 900px;
+}
+
+.point-position-2 {
+    top: 140px;
+    left: 860px;
+}
+
+.point-position-3 {
+    top: 140px;
+    left: 973px;
+}
+
+.point-position-4 {
+    top: 140px;
+    left: 220px;
+}
+
+.point-position-5 {
+    top: 250px;
+    left: 840px;
+}
+
+.point-position-6 {
+    top: 223px;
+    left: 826px;
+}
+
+.point-position-7 {
+    top: 185px;
+    left: 733px;
+}
+
+.point-position-8 {
+    top: 125px;
+    left: 820px;
+}
+
+.point-position-9 {
+    top: 195px;
+    left: 900px;
+}
+
+.point-position-10 {
+    top: 158px;
+    left: 661px;
+}
+
+.point-position-11 {
+    top: 85px;
+    left: 542px;
+}
+
+.point-position-12 {
+    top: 120px;
+    left: 140px;
+}
+
+.point-position-13 {
+    top: 286px;
+    left: 870px;
+}
+
+.point-position-14 {
+    top: 355px;
+    left: 958px;
+}
+
+
+/*名称*/
+
+.point-name {
+    position: absolute;
+}
+
+.point-name-1 {
+    top: 30px;
+    left: 50px;
+}
+
+.point-name-2 {
+    top: 45px;
+    left: 15px;
+}
+
+.point-name-3 {
+    top: 30px;
+    left: 50px;
+}
+
+.point-name-4 {
+    top: 40px;
+    left: 60px;
+}
+
+.point-name-5 {
+    top: 60px;
+    left: 80px;
+}
+
+.point-name-6 {
+    top: 65px;
+    left: 85px;
+}
+
+.point-name-7 {
+    top: 65px;
+    left: 35px;
+}
+
+.point-name-8 {
+    top: 90px;
+    left: 60px;
+}
+
+.point-name-9 {
+    top: 30px;
+    left: 50px;
+}
+
+.point-name-10 {
+    top: 45px;
+    left: 65px;
+}
+
+.point-name-11 {
+    top: 30px;
+    left: 50px;
+}
+
+.point-name-12 {
+    top: 30px;
+    left: 50px;
+}
+
+.point-name-13 {
+    top: 50px;
+    left: 20px;
+}
+
+.point-name-14 {
+    top: 65px;
+    left: 85px;
+}
+
+
+/*大小*/
+
+.point-80 {
+    width: 80px;
+    height: 80px;
+}
+
+.point-100 {
+    width: 100px;
+    height: 100px;
+}
+
+.point-110 {
+    width: 110px;
+    height: 110px;
+}
+
+.point-120 {
+    width: 120px;
+    height: 120px;
+}
+
+.point-140 {
+    width: 140px;
+    height: 140px;
+}
+
+.point-150 {
+    width: 150px;
+    height: 150px;
+}
+
+.point-200 {
+    width: 200px;
+    height: 200px;
+}
+
+
+/*边框*/
+
+.point-loop {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /*width: 100%;
+	height: 100%;*/
+    width: 0;
+    height: 0;
+    margin: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #00c1de;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*认证*/
+
+.global-declear {
+    display: flex;
+    padding: 0 120px;
+    /*display:flex后，子元素box-sizing默认border-box*/
+}
+
+.declear-list {
+    width: 25%;
+    padding: 0 10px;
+}
+
+.declear-list a {
+    color: #373d41;
+}
+
+.declear-list a img {
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+
+.declear-list a p {
+    float: left;
+    padding-left: 10px;
+    line-height: 50px;
+}
+
+
+/*
+.global-declear {
+	padding: 0 120px;
+}
+.declear-list a {
+	float: left;
+	width: 25%;
+	padding: 0 10px;
+	color: #373d41;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.declear-list a img{
+	float: left;
+	width: 50px;
+	height: 50px;
+}
+.declear-list a p {
+	float: left;
+	padding-left: 10px;
+	line-height: 50px;
+}
+*/
+
+
+/*------------------------------------------------------------合作伙伴------------------------------------------------------*/
+
+
+/*------------------------------------------------------*/
+
+
+/*wrap单独样式*/
+
+.module-wrap-partner {
+    margin-top: 130px;
+}
+
+.module-wrap-partner .main-service-sub-title {
+    margin-bottom: 12px;
+}
+
+.partner-list {
+    display: flex;
+    min-width: 1000px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.partner-list .partner {
+    width: 20%;
+    height: 203px;
+    box-sizing: border-box;
+}
+
+.partner-1 {
+    background: url("https://img.alicdn.com/tps/TB1GRbJLXXXXXcEXXXXXXXXXXXX-480-260.png") 0 36.5px/auto 93.5px no-repeat;
+}
+
+.partner-2 {
+    background: url("https://img.alicdn.com/tps/TB1S6_dLXXXXXa0aXXXXXXXXXXX-480-260.png") 0 36.5px/auto 93.5px no-repeat;
+}
+
+.partner-3 {
+    background: url("https://img.alicdn.com/tps/TB1BErILXXXXXXmXpXXXXXXXXXX-480-260.png") 0 36.5px/auto 93.5px no-repeat;
+}
+
+.partner-4 {
+    background: url("https://img.alicdn.com/tps/TB1MqHgLXXXXXaIapXXXXXXXXXX-480-260.png") 0 36.5px/auto 93.5px no-repeat;
+}
+
+.partner-5 {
+    background: url("https://img.alicdn.com/tps/TB1eFzgLXXXXXacaXXXXXXXXXXX-480-260.png") 0 36.5px/auto 93.5px no-repeat;
+}
+
+
+/*------------------------------------------------------------注册使用------------------------------------------------------*/
+
+
+/*------------------------------------------------------*/
+
+
+/*wrap层*/
+
+.ali-register-wrap {
+    position: relative;
+    width: 100%;
+    min-width: 1000px;
+    height: 200px;
+    padding-top: 56px;
+    text-align: center;
+    background: #00c1de;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ali-register-desc {
+    position: relative;
+    color: #fff;
+    font-size: 24px;
+    line-height: 31px;
+    margin-bottom: 17px;
+    z-index: 1;
+}
+
+.ali-register-wrap button {
+    position: relative;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.register-btn {
+    display: block;
+    width: 122px;
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    font-size: 16px;
+    border: 1px solid #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/*------------------------------------------------------------foter------------------------------------------------------*/
+
+
+/*------------------------------------------------------*/
+
+
+/*footer单独wrap层样式*/
+
+.module-wrap-footer {
+    text-align: left;
+    background: rgb(55, 61, 65);
+    color: #000;
+}
+
+.module-wrap-footer a {
+    color: #9b9ea0;
+}
+
+.footer-wrap {
+    min-width: 1000px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgb(75, 80, 84);
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*服务层*/
+
+.footer-wrap-service {
+    min-height: 220px;
+    padding: 30px 20px 0;
+}
+
+.footer-wrap-service .footer-wrap {
+    padding-bottom: 30px;
+}
+
+
+/*电话咨询*/
+
+.footer-service-phone {
+    position: relative;
+    width: 280px;
+    margin-right: 20px;
+    padding-left: 80px;
+    text-align: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.footer-service-phone img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+}
+
+.footer-service-phone h2 {
+    height: 30px;
+    color: #d7d8d9;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.footer-service-phone h1 {
+    height: 30px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.footer-service-phone ul {
+    margin: 16px 0;
+}
+
+.footer-service-phone ul li {
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+
+/*服务内容*/
+
+.footer-service-content {
+    display: flex;
+    flex-grow: 1;
+    padding-left: 130px;
+    text-align: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-left: 1px solid #4b5054;
+}
+
+.footer-service-content div {
+    width: 22%;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.footer-service-content div:last-child {
+    flex-shrink: 1;
+}
+
+.footer-service-content div h3 {
+    height: 18px;
+    line-height: 18px;
+    color: #d7d8d9;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+.footer-service-content div ul {
+    margin-top: 14px;
+}
+
+.footer-service-content div ul li {
+    margin-top: 8px;
+}
+
+.footer-service-content img {
+    display: block;
+    /*img为内联元素时，设置margin-top，是相对父元素盒子。设置display后，由于父元素未设置border、overflow等形成BFC模型，所以margin-top溢出。此时margin-top取父元素与img的较大值*/
+    width: 80px;
+    margin-top: 16px;
+    vertical-align: middle;
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*产品层*/
+
+.footer-wrap-product {
+    padding: 20px 20px 0;
+}
+
+.footer-wrap-product .footer-wrap {
+    padding-bottom: 20px;
+}
+
+.footer-wrap-product h3 {
+    flex-shrink: 0;
+    width: 80px;
+    color: #9b9ea0;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-top: 8px;
+}
+
+.footer-wrap-product ul {
+    margin-top: 8px;
+    flex-grow: 1;
+}
+
+.footer-wrap-product .flex-box .flex-box li {
+    width: 124px;
+}
+
+.footer-wrap-product li a {
+    color: rgb(115, 119, 122);
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*copyright层*/
+
+.footer-wrap-copyright {
+    padding: 30px 20px 20px;
+}
+
+.footer-wrap-copyright .footer-wrap {
+    border: none;
+}
+
+
+/*重点*/
+
+.copyright-highlight a {
+    margin-right: 35px;
+    color: #9b9ea0;
+    font-size: 16px;
+}
+
+
+/*其他网站*/
+
+.copyright-other {
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+
+/*copyright声明*/
+
+.copyright-other li {
+    flex-grow: 1;
+}
+
+.copyright-other li a {
+    display: block;
+    margin-right: 10px;
+    color: #73777a;
+    font-size: 14px;
+}
+
+p.copyright {
+    color: #73777a;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.gov-icon {
+    width: 20px;
+}
+
+.gov-icon-1 {
+    vertical-align: bottom;
+}
+
+.gov-icon-2 {
+    vertical-align: middle;
+}
+
+.gov-icon+span {
+    /*float: left;*/
+    height: 20px;
+    line-height: 20px;
+    color: #939393;
+    font-size: 14px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+
+/*------------------------------------------------------------动画设置------------------------------------------------------*/
+
+
+/*--------------------------------------导航栏------------------------------------*/
+
+
+/*------------------------------------------------------*/
+
+
+/*a:hover*/
+
+a {
+    -webkit-transition: color .3s;
+    -moz-transition: color .3s;
+    -ms-transition: color .3s;
+    -o-transition: color .3s;
+    transition: color .3s;
+}
+
+a:hover {
+    color: #00c1d1 !important;
+}
+
+.home-page-footer a:hover {
+    color: inherit !important;
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*nav导航栏:hover*/
+
+header {
+    transition: background .3s cubic-bezier(0, 0, .2, 1) .15s;
+}
+
+header:hover {
+    background: #1c2327;
+}
+
+header:hover nav:last-child {
+    border: none;
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*search框放大*/
+
+.search input {
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+
+/*.search:hover {
+	width: 300px;     无法实现input框选中宽度保持300px不变
+}*/
+
+.search:hover input,
+.search input:focus {
+    width: 300px;
+    border: 1.5px solid #00c1de;
+    /*outline: 1.5px solid #00c1de;   outline不占用空间，显示溢出*/
+    background: #262c30;
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*button按钮*/
+
+button {
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+.banner-headline-position button {
+    transition: none;
+}
+
+button:hover {
+    color: #00c1de;
+    background: #fff;
+    border-color: #00c1de;
+    cursor: pointer;
+}
+
+.slider-btn button:hover {
+    color: inherit;
+    background: rgba(22, 26, 29, .3);
+    border-color: inherit;
+}
+
+button:hover a {
+    color: #00c1de;
+    font-weight: bold;
+}
+
+
+/*banner-headline下的button:hover*/
+
+.banner-headline-position button:hover {
+    background: none;
+}
+
+.banner-headline-position i {
+    transition: border-color .3s;
+}
+
+.banner-headline-position button:hover a i {
+    border-color: #00c1de;
+}
+
+
+/*单选按钮下的button按钮*/
+
+.ali-product-down:hover+input+div+button,
+.ali-product-up:hover+div+button+button {
+    color: #00c1de;
+    border-color: #00c1de;
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*home页标题淡入*/
+
+@keyframes banner-headline-in {
+    from {
+        opacity: .2;
+        top: 230px;
+    }
+    to {
+        opacity: 1;
+        top: 180px;
+    }
+}
+
+input:checked+span+span+section .banner-headline-position {
+    -webkit-animation: banner-headline-in .8s cubic-bezier(.4, 0, .2, 1) forwards;
+    -o-animation: banner-headline-in .8s cubic-bezier(.4, 0, .2, 1) forwards;
+    animation: banner-headline-in .8s cubic-bezier(.4, 0, .2, 1) forwards;
+}
+
+
+/*背景淡入*/
+
+@keyframes banner-img-in {
+    from {
+        opacity: .2;
+        top: 50px;
+    }
+    to {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+input:checked+span+span+section .banner-bg-img {
+    -webkit-animation: banner-img-in .8s cubic-bezier(.4, 0, .2, 1) forwards;
+    -o-animation: banner-img-in .8s cubic-bezier(.4, 0, .2, 1) forwards;
+    animation: banner-img-in .8s cubic-bezier(.4, 0, .2, 1) forwards;
+}
+
+
+/*图片呼吸*/
+
+@keyframes breath {
+    from {
+        opacity: .2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.banner-img-right img[alt="breath"] {
+    -webkit-animation: breath 2s ease-in-out infinite alternate;
+    -o-animation: breath 2s ease-in-out infinite alternate;
+    animation: breath 2s ease-in-out infinite alternate;
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*home页footer*/
+
+.home-page-footer a:hover {
+    background: hsla(0, 0%, 100%, .06);
+    border-color: transparent;
+}
+
+.home-page-footer a {
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+
+/*--------------------------------------------------ali-product--------------------------------------------*/
+
+
+/*------------------------------------------------------*/
+
+
+/*动画设置wrap层*/
+
+.must-animation-wrap {
+    max-width: 1200px;
+    min-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/*下拉菜单*/
+
+
+/*.ali-product-layer:nth-last-child(2) {
+	margin-bottom: 113px;
+	!*margin-bottom: 243.67px;*!
+	-webkit-transition: margin .5s ease-in-out;
+	-moz-transition: margin .5s ease-in-out;
+	-ms-transition: margin .5s ease-in-out;
+	-o-transition: margin .5s ease-in-out;
+	transition: margin .5s ease-in-out;
+}*/
+
+.ali-product-layer:last-child {
+    /*position: absolute;
+	bottom: 0;
+	display: none;*/
+    opacity: 0;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+.ali-product-layer:last-child .ali-product-tab {
+    padding-bottom: 0;
+}
+
+.ali-product-down:checked+input+div+button+button+.module-wrap .ali-product-layer:last-child {
+    margin-bottom: 113px;
+    padding-bottom: 15px;
+    opacity: 1;
+}
+
+
+/*.ali-product-layer:last-child {
+	display: none;
+}*/
+
+
+/*.ali-product-down:checked+input+button+button+.module-wrap .ali-product-layer:nth-last-child(2) {
+	margin-bottom: 243.67px;
+}*/
+
+
+/*.ali-product-up:checked+button+button+.module-wrap .ali-product-layer:nth-last-child(2) {
+	margin-bottom: 113px;
+}*/
+
+
+/*
+.ali-product-down:checked+input+button+button+.module-wrap .ali-product-layer:last-child {
+	margin-bottom: 113px;
+	opacity: 1;
+	display: block;
+}*/
+
+
+/*选项卡*/
+
+
+/*
+.ali-product-tab a[data-1]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1XhNOQVXXXXXcaXXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-2]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1s_xUQVXXXXXiXVXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-3]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1AO1pQVXXXXX6XXXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-4]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1hCRYQVXXXXa7XFXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-5]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1Y.p7QVXXXXXHXFXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-6]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1kFSaQVXXXXXmXFXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-7]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1ikp1QVXXXXcHXFXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-8]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1m95cQVXXXXcSXpXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-9]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1ZiR8QVXXXXacXFXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-10]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1_60pQVXXXXXKaXXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-11]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1y59cQVXXXXbGXpXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-12]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1lnJDQVXXXXcjaXXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-13]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1k4tIQVXXXXcMXVXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-14]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1Ft86QVXXXXaBXFXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-15]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1i3iyQVXXXXXoXXXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-16]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1gWanQVXXXXcEXXXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-17]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1GkFHQVXXXXaTaXXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-18]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB1JcU4SFXXXXbCapXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}
+.ali-product-tab a[data-19]:hover span{
+	background: url("https://img.alicdn.com/tfs/TB18XOXQVXXXXbzXFXXXXXXXXXX-160-160.png") 0 0/contain no-repeat;
+}*/
+
+
+/*--------------------------------------------------slider层动画设置--------------------------------------------*/
+
+
+/*slider淡入淡出动画*/
+
+.module-wrap-slider .slider-item * {
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+
+/*透明度添加*/
+
+.slider-item .slider-content .slider-content-logo img:last-child {
+    opacity: 0;
+}
+
+.slider-item .slider-content .slider-content-line {
+    opacity: 1;
+}
+
+.slider-item .slider-content .slider-content-desc {
+    opacity: 0;
+}
+
+.slider-item .slider-content button {
+    opacity: 0;
+}
+
+
+/*遮罩层*/
+
+.module-wrap-slider .slider-item:hover .mask {
+    background: #00c2de;
+    opacity: .9;
+}
+
+
+/*文字*/
+
+
+/*.slider-item:hover .slider-content-logo img:first-child{
+	display: none;
+}
+.slider-item:hover .slider-content-logo img:last-child{
+	display: inline-block;
+}*/
+
+.slider-item:hover .slider-content {
+    top: 13%;
+}
+
+.slider-item:hover .slider-content .slider-content-logo img:last-child {
+    opacity: 1;
+}
+
+.slider-item:hover .slider-content .slider-content-line {
+    margin-top: 10px;
+    opacity: 0;
+}
+
+.slider-item:hover .slider-content .slider-content-title {
+    margin-top: 12px;
+}
+
+.slider-item:hover .slider-content .slider-content-desc {
+    opacity: 1;
+}
+
+.slider-item:hover .slider-content button {
+    margin-top: 14%;
+    opacity: 1;
+}
+
+
+/*--------------------------------------------------service层动画设置--------------------------------------------*/
+
+
+/*雪碧图*/
+
+@keyframes service-sprites {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -4425px;
+    }
+}
+
+.ali-main-service span {
+    -webkit-transition: background-position .4s steps(59);
+    -moz-transition: background-position .4s steps(59);
+    -ms-transition: background-position .4s steps(59);
+    -o-transition: background-position .4s steps(59);
+    transition: background-position .4s steps(59);
+}
+
+.ali-main-service .flex-item>a:hover span {
+    background-position: 0 -4425px;
+}
+
+
+/*--------------------------------------------------community层动画设置--------------------------------------------*/
+
+.community-img-box img {
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.community-img-box img:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+/*--------------------------------------------------defence层动画设置--------------------------------------------*/
+
+.ali-defence-wrap a:hover {
+    color: #fff !important;
+}
+
+
+/*--------------------------------------------------global层动画设置--------------------------------------------*/
+
+
+/*地图循环动画*/
+
+
+/*.point-loop {
+	!*-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-ms-transform: scale(0);
+	-o-transform: scale(0);
+	transform: scale(0);*!
+}*/
+
+.loop-1 {
+    -webkit-animation: loop 4s linear infinite;
+    -o-animation: loop 4s linear infinite;
+    animation: loop 4s linear infinite;
+}
+
+.loop-2 {
+    -webkit-animation: loop 4s .5s linear infinite;
+    -o-animation: loop 4s .5s linear infinite;
+    animation: loop 4s .5s linear infinite;
+}
+
+.loop-3 {
+    -webkit-animation: loop 4s 1.3s linear infinite;
+    -o-animation: loop 4s 1.3s linear infinite;
+    animation: loop 4s 1.3s linear infinite;
+}
+
+@keyframes loop {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        /*-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;*/
+        width: 50%;
+        height: 50%;
+        opacity: .5;
+    }
+    100% {
+        /*-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;*/
+        /*width: 100%;
+		height: 100%;*/
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+    /*50% {
+		!*display: none;*!
+	}
+	75% {
+		!*display: none;*!
+	}
+	100% {
+		!*display: none;*!
+	}*/
+}
+
+
+/*
+@keyframes loop-4s {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 0;
+	}
+	50% {
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+	}
+	75% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes loop-6s {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0;
+	}
+	75% {
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}*/
+
+
+/*鼠标滑过取消*/
+
+.global-declear a:hover {
+    color: #000 !important;
+}
