@@ -7,6 +7,7 @@
 //tween: timing function 函数方程
 //flag: Boolean 判断是按值移动还是按位置移动,默认按位置移动
 //fn: callback 回调函数
+//增加返回值: 将内部参数对象返回，可以通过设置返回对象的属性stop为true打断动画
 function requestAnimation(obj) {
     //—————————————————————————————————————参数设置—————————————————————————————————————————————
     //默认属性
@@ -17,6 +18,7 @@ function requestAnimation(obj) {
         time: 1000,
         tween: "linear",
         flag: true,
+        stop: false,
         fn: ""
     }
 
@@ -57,6 +59,7 @@ function requestAnimation(obj) {
 
     //运动函数
     function animate(timestamp) {
+        if (parameter.stop) return; //打断
         //存储初始时间戳
         if (!start) start = timestamp;
         //已运动时间
@@ -77,6 +80,7 @@ function requestAnimation(obj) {
                         else curVal = Tween[tween](t, beginAttr[i], count + beginAttr[i], time); //调用Tween，返回当前属性值，此时计算方法为移动了写入距离
                         if (attr[i] === "opacity") target.style[attr[i]] = curVal; //给属性赋值
                         else target.style[attr[i]] = curVal + "px"; //给属性赋值
+
                         if (t < time) requestAnimationFrame(animate); //判断是否运动完
                         else callback && callback(); //调用回调函数
                     }
@@ -177,14 +181,14 @@ function requestAnimation(obj) {
         else curVal = Tween[tween](t, beginAttr[i], count + beginAttr, time); //调用Tween，返回当前属性值，此时计算方法为移动了写入距离
         if (attr === "opacity") target.style[attr] = curVal;
         else target.style[attr] = curVal + "px";
-        if (parameter.stop) return;
+
         if (t < time) requestAnimationFrame(animate);
         else callback && callback();
 
     }
 
     requestAnimationFrame(animate);
-    return parameter;
+    return parameter; //返回对象，供打断或其他用途
 }
 //Tween.js
 /*
@@ -198,7 +202,7 @@ function requestAnimation(obj) {
  * http://www.cnblogs.com/bluedream2009/archive/2010/06/19/1760909.html
  * */
 
-var Tween = {
+let Tween = {
     linear: function(t, b, c, d) { //匀速
         return c * t / d + b;
     },
