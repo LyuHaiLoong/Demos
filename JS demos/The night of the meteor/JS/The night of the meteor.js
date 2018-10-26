@@ -1,6 +1,6 @@
 //流星动画
 setInterval(function() {
-    const obj = add("#sky", 2, "star");
+    const obj = add("#sky", "div", 2, "star");
 
     for (let i = 0; i < obj.children.length; i++) {
         const top = -50 + Math.random() * 200 + "px",
@@ -37,7 +37,7 @@ setInterval(function() {
 
 //闪烁星星动画
 setInterval(function() {
-    const obj = add("#stars", 2, "blink");
+    const obj = add("#stars", "div", 2, "blink");
 
     for (let i = 0; i < obj.children.length; i++) {
         const top = -50 + Math.random() * 500 + "px",
@@ -73,6 +73,23 @@ setInterval(function() {
 
 }, 1000);
 
+//月亮移动
+requestAnimation({
+    ele: "#moon",
+    attr: "right",
+    value: 1200,
+    time: 10000000,
+});
+
+
+// 添加云
+const clouds = add(".cloud", "div", 14, "circle", true);
+console.log(clouds);
+for (let i = 0; i < clouds.children.length; i++) {
+    for (let j = 0; j < clouds.children[i].length;) {
+        clouds.children[i][j].classList.add(`circle-${++j}`);
+    }
+}
 //云动画
 
 let flag = 1;
@@ -104,45 +121,3 @@ setInterval(
 
         flag++;
     }, 2000)
-
-//月亮移动
-requestAnimation({
-    ele: "#moon",
-    attr: "right",
-    value: 1200,
-    time: 10000000,
-});
-
-//封装添加函数
-function add(ele, n, className, boolean) {
-    //获取节点
-    let parent = null;
-
-    if (typeof ele !== "string") parent = ele;
-    else if (ele[0] === "#") parent = document.getElementById(ele.slice(1));
-    else if (ele[0] === ".") {
-        if (boolean === false) parent = document.getElementsByClassName(ele.slice(1))[0];
-        else parent = document.getElementsByClassName(ele.slice(1));
-    } else {
-        if (boolean === false) parent = docuemnt.getElementsByTagName(ele)[0];
-        else parent = document.getElementsByTagNameNS(ele);
-    }
-
-    //声明用于存储父节点及子节点的对象 
-    const obj = {
-        "parent": parent,
-        "children": []
-    };
-
-    //添加节点
-    for (let i = 0; i < n; i++) {
-        const div = document.createElement("div");
-        div.className = className;
-        parent.appendChild(div);
-
-        obj.children.push(div);
-    }
-
-    //返回参数，供动画函数调用
-    return obj;
-}
