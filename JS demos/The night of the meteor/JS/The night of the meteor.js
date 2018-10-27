@@ -84,7 +84,6 @@ requestAnimation({
 
 // 添加云
 const clouds = add(".cloud", "div", 14, "circle", true);
-console.log(clouds);
 for (let i = 0; i < clouds.children.length; i++) {
     for (let j = 0; j < clouds.children[i].length;) {
         clouds.children[i][j].classList.add(`circle-${++j}`);
