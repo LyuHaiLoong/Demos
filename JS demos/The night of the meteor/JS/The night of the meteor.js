@@ -1,6 +1,6 @@
 //流星动画
 setInterval(function() {
-    const obj = add("#sky", "div", 2, "star");
+    const obj = addChild("#sky", "div", 2, "star");
 
     for (let i = 0; i < obj.children.length; i++) {
         const top = -50 + Math.random() * 200 + "px",
@@ -37,7 +37,7 @@ setInterval(function() {
 
 //闪烁星星动画
 setInterval(function() {
-    const obj = add("#stars", "div", 2, "blink");
+    const obj = addChild("#stars", "div", 2, "blink");
 
     for (let i = 0; i < obj.children.length; i++) {
         const top = -50 + Math.random() * 500 + "px",
@@ -83,7 +83,7 @@ requestAnimation({
 
 
 // 添加云
-const clouds = add(".cloud", "div", 14, "circle", true);
+const clouds = addChild(".cloud", "div", 14, "circle", true);
 for (let i = 0; i < clouds.children.length; i++) {
     for (let j = 0; j < clouds.children[i].length;) {
         clouds.children[i][j].classList.add(`circle-${++j}`);

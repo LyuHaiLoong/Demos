@@ -339,7 +339,7 @@ let Tween = {
 // n: 节点添加个数
 // className: 节点绑定的class名，，值为字符串，多个class名用空格隔开
 // boolean: 是否选中所有目标父节点。可选参数，不输入则判定为false，则只匹配选中的第一个节点
-function add(ele, node, n, className, boolean) {
+function addChild(ele, node, n, className, boolean) {
     //获取节点
     let parent = null;
 
