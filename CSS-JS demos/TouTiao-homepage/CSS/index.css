@@ -9,7 +9,7 @@ body {
 	height: 100%;
 	min-width: 1200px;
 	min-height: 560px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 body {
@@ -17,7 +17,6 @@ body {
 	font-family: helvetica, Arial, Hiragino Sans GB, Microsoft YaHei, simsun, sans-serif;
 	font-size: 14px;
 	line-height: 1.2;
-	overflow: hidden;
 }
 
 ul,
@@ -26,6 +25,11 @@ li {
 	padding: 0;
 	list-style: none;
 	cursor: pointer;
+}
+h2,
+p {
+	margin: 0;
+	padding: 0;
 }
 
 /*----------------------------整页公用属性----------------------------*/
@@ -79,6 +83,9 @@ a:hover {
 /*-----------------------------------------------------------头部导航-----------------------------------------------------*/
 
 /*----------------------------header公共属性----------------------------*/
+header {
+	font-size: 0;
+}
 .btn {
 	width: 96px;
 	height: 40px;
@@ -250,7 +257,7 @@ a:hover {
 }
 
 /*单页内容包裹层*/
-.standard-content {
+.page .standard-content {
 	position: relative;
 	width: 890px;
 	height: 100%;
@@ -258,21 +265,22 @@ a:hover {
 }
 
 /*单页内容标题*/
-.title {
+.page .title {
 	color: #222;
 	font-size: 40px;
+	font-weight: normal;
 	line-height: 40px;
 }
 
 /*单页内容文本*/
-.text {
+.page .text {
 	color: #222;
 	font-size: 18px;
 	line-height: 18px;
 }
 
 /*导航箭头*/
-.guide-arrow {
+.page .guide-arrow {
 	left: 50%;
 	bottom: 36px;
 	width: 32px;
@@ -337,3 +345,140 @@ a:hover {
 .page-1 .standard-content .logoin {
 	left: 519px;
 }
+
+/*----------------------------page-2----------------------------*/
+.page-2 .standard-content .title {
+	top: 180px;
+	line-height: 56px;
+}
+.page-2 .standard-content .text {
+	top: 244px;
+}
+.page-2 .standard-content .link {
+	top: 352px;
+	width: 250px;
+	color: #406599;
+	font-size: 18px;
+	line-height: 18px;
+}
+.page-2 .standard-content .btn {
+	top: 394px;
+	left: -13px;
+	width: 150px;
+	height: 76px;
+}
+
+.page-2 .standard-content .i-1 {
+	top: 322px;
+	left: 335px;
+	width: 514px;
+	height: 319px;
+}
+.page-2 .standard-content .i-2 {
+	top: 448px;
+	left: 372px;
+	width: 105px;
+	height: 58px;
+}
+.page-2 .standard-content .i-3 {
+	top: 521px;
+	left: 403px;
+	width: 119px;
+	height: 71px;
+}
+.page-2 .standard-content .i-4 {
+	top: 523px;
+	left: 631px;
+	width: 141px;
+	height: 94px;
+}
+
+.page-2 .standard-content .loop {
+	top: 139px;
+	left: 255px;
+	width: 666px;
+	height: 666px;
+	opacity: .65;
+}
+.page-2 .standard-content .loop div {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border: 1px solid #979797;
+	border-radius: 50%;
+}
+
+/*----------------------------page-3----------------------------*/
+.page-3 .standard-content .title {
+	top: 155px;
+}
+.page-3 .standard-content .text {
+	top: 280px;
+}
+
+.page-3 .standard-content .icon-list {
+	top: 340px;
+}
+
+.page-3 .standard-content .icon-list img{
+	width: 59px;
+	height: 59px;
+}
+.page-3 .standard-content .icon-list .icon-4{
+	margin-bottom: 12px;
+	width: 45px;
+	height: 45px;
+}
+
+.page-3 .standard-content .i-1 {
+	top: 215px;
+	left: 236px;
+	width: 867px;
+	height: 502px;
+}
+.page-3 .standard-content .i-2 {
+	top: 525px;
+	left: 680px;
+	width:	100px;
+	height:	50px;
+}
+.page-3 .standard-content .i-3 {
+	top: 539px;
+	left: 51px;
+	width:	117px;
+	height:	95px;
+} 
+.page-3 .standard-content .i-4 {
+	top: 354px;
+	left: 332px;
+	width:	476px;
+	height:	345px;
+}  
+.page-3 .standard-content .i-5 {
+	top: 462px;
+	left: 741px;
+	width: 101px;
+	height: 75px;
+} 
+.page-3 .standard-content .i-6 {
+	top: 437px;
+	left: 814px;
+	width: 120px;
+	height: 97px;
+}
+.page-3 .standard-content .i-7 {
+	top: 613px;
+	left: 171px;
+	width: 192px;
+	height: 91px;
+}
+.page-3 .standard-content .i-8 {
+	top: 550px;
+	left: 733px;
+	width:138px;
+	height: 85px;
+} 
+
+
+
