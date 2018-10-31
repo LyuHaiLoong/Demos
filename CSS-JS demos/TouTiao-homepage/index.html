@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>主页 - 头条号</title>
+	<link rel="shortcut icon" type="image/x-icon" href="https://p3.pstatp.com/origin/37c500003241fc0bed3c">
+	<link rel="stylesheet" type="text/css" href="CSS/index.css">
+</head>
+<body>
+<!-- 官网写法 -->
+<!-- 
+<header class="nav-top fixed absoluteAll">
+	<img src="images/logo-left.png" class="logo-left">
+	<img src="images/logo-right.png" class="logo-right">
+	<div class="btns-wrapper">
+		<button class="btn register"><a href="javascript:;">注册</a></button>
+		<button class="btn logoin"><a href="javascript:;">登录</a></button>
+	</div>
+</header> 
+-->
+
+<header class="nav-top fixed flexlayout justify-between align-center">
+	<div class="flexlayout align-center">
+		<img src="images/logo-left.png" class="logo-left">
+		<img src="images/logo-right.png" class="logo-right">
+	</div>
+	<div class="flexlayout align-center">
+		<button class="btn register"><a href="javascript:;">注册</a></button>
+		<button class="btn logoin"><a href="javascript:;">登录</a></button>
+	</div>
+</header>
+	<!-- <nav class="carousel-btns fixed"> -->
+	<!-- 用flex布局水平垂直居中时，与用position和transalte水平垂直居中比较，存在误差，原因不明。想复用flex失败。
+	<nav class="carousel-btns fixed flexlayout justify-center align-center">
+		<ul>
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>	
+	</nav> 
+-->
+<nav class="carousel-btns fixed">
+	<ul>
+		<li class="active"></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>	
+</nav>
+<main class="carousel">
+	<section class="page page-1 absoluteAll">
+		<img src="images/page1-1.jpeg" class="bg-1">
+		<img src="images/page1-2.png" class="bg-2">
+		<img src="images/page1-3.png" class="bg-3">
+		<img src="images/page1-4.png" class="bg-4">
+		<div class="standard-content absoluteAll">
+			<img src="images/page1-5.png" class="i-1">
+			<img src="images/page1-6.png" class="i-2">
+			<img src="images/page1-7.png" class="btn register">
+			<img src="images/page1-8.png" class="btn logoin">
+		</div>
+		<img src="images/guide-arrow.png" class="guide-arrow">
+	</section>
+	<section class="page page-2"></section>
+	<section class="pagepage-3"></section>
+</main>
+</body>
+</html>

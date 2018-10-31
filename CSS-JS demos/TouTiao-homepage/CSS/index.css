@@ -1,0 +1,339 @@
+/*-----------------------------------------------------------公共样式-----------------------------------------------------*/
+
+/*----------------------------reset----------------------------*/
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	min-width: 1200px;
+	min-height: 560px;
+	overflow: hidden;
+}
+
+body {
+	color: #595959;
+	font-family: helvetica, Arial, Hiragino Sans GB, Microsoft YaHei, simsun, sans-serif;
+	font-size: 14px;
+	line-height: 1.2;
+	overflow: hidden;
+}
+
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	cursor: pointer;
+}
+
+/*----------------------------整页公用属性----------------------------*/
+
+/*flex布局*/
+.flexlayout {
+	display: flex;
+}
+
+.flexlayout * {
+	flex-shrink: 0;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.align-center {
+	align-items: center;
+}
+
+/*父元素下所有第一代子元素绝对定位*/
+.absoluteAll>* {
+	position: absolute;
+}
+
+/*固定定位，用于导航条*/
+.fixed {
+	position: fixed;
+}
+
+/*a标签*/
+a {
+	text-decoration: none;
+	cursor: pointer;
+	-webkit-transition: opacity .5s;
+	-moz-transition: opacity .5s;
+	-ms-transition: opacity .5s;
+	-o-transition: opacity .5s;
+	transition: opacity .5s;
+}
+
+a:hover {
+	opacity: .7;
+}
+
+/*-----------------------------------------------------------头部导航-----------------------------------------------------*/
+
+/*----------------------------header公共属性----------------------------*/
+.btn {
+	width: 96px;
+	height: 40px;
+	line-height: 40px;
+	background: none;
+	border: none;
+	border-radius: 4px;
+	outline: none;	/*vertical-align: bottom;  用于官网原写法按钮对齐*/
+}
+
+.btn a {
+	display: block;
+	height: 100%;
+	color: inherit;
+	line-height: inherit;
+}
+
+/*官网原写法*/
+
+/*
+.nav-top {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 76px;
+	background: #fff;
+	box-shadow: 0 1px 10px hsla(0, 7%, 56%, .08);
+	z-index: 3;
+	-webkit-transition: top .3s;
+	-moz-transition: top .3s;
+	-ms-transition: top .3s;
+	-o-transition: top .3s;
+	transition: top .3s;
+}
+
+.logo-left {
+	top: 14px;
+	left: 40px;
+	width: 47px;
+	height: 47px;
+}
+
+.logo-right {
+	top: 22px;
+	left: 102px;
+	width: 94px;
+	height: 32px;
+}
+
+.btns-wrapper {
+	position: absolute;
+	right: 40px;
+	bottom: 18px;
+}
+
+.register {
+	color: #f85959;
+	background: #fff;
+	border: 1px solid #f85959;
+}
+
+.logoin {
+	margin-left: 10px;
+	color: #fff;
+	background: #f85959;
+}
+*/
+
+/*改进写法，利用CSS方法居中，不适用position + px定位*/
+.nav-top {
+	top: -76px;
+	left: 0;
+	width: 100%;
+	height: 76px;
+	line-height: 76px;
+	background: #fff;
+	box-shadow: 0 1px 10px hsla(0, 7%, 56%, .08);
+	z-index: 3;
+	-webkit-transition: top .3s;
+	-moz-transition: top .3s;
+	-ms-transition: top .3s;
+	-o-transition: top .3s;
+	transition: top .3s;
+}
+
+.logo-left {
+	margin-top: -1px;
+	margin-left: 40px;
+	width: 47px;
+	height: 47px;
+}
+
+.logo-right {
+	margin-left: 15px;
+	width: 94px;
+	height: 32px;
+}
+
+.nav-top .register {
+	color: #f85959;
+	background: #fff;
+	border: 1px solid #f85959;
+}
+
+.nav-top .logoin {
+	margin-left: 14px;
+	margin-right: 40px;
+	color: #fff;
+	background: #f85959;
+}
+
+/*-----------------------------------------------------------轮播图按钮-----------------------------------------------------*/
+.carousel-btns {
+	top: 0;
+	left: 0;
+	width: 50px;
+	height: 100%;
+	z-index: 2;
+}
+
+.carousel-btns ul {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.carousel-btns li {
+	width: 10px;
+	height: 10px;
+	margin: 10px 0;
+	background: #d2d4d6;
+	border-radius: 50%;
+}
+
+.carousel-btns li.active {
+	background: #fff;
+	border: 4px solid #f95e58;
+	-webkit-transform: translateX(-4px);
+	-moz-transform: translateX(-4px);
+	-ms-transform: translateX(-4px);
+	-o-transform: translateX(-4px);
+	transform: translateX(-4px);
+}
+
+/*-----------------------------------------------------------轮播图-----------------------------------------------------*/
+
+/*----------------------------单页公共属性----------------------------*/
+
+/*总包裹层*/
+.carousel {
+	height: 100%;
+	-webkit-transition: all .8s;
+	-moz-transition: all .8s;
+	-ms-transition: all .8s;
+	-o-transition: all .8s;
+	transition: all .8s;
+}
+
+/*单页包裹层*/
+.page {
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+}
+
+/*单页内容包裹层*/
+.standard-content {
+	position: relative;
+	width: 890px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+/*单页内容标题*/
+.title {
+	color: #222;
+	font-size: 40px;
+	line-height: 40px;
+}
+
+/*单页内容文本*/
+.text {
+	color: #222;
+	font-size: 18px;
+	line-height: 18px;
+}
+
+/*导航箭头*/
+.guide-arrow {
+	left: 50%;
+	bottom: 36px;
+	width: 32px;
+	height: 30px;
+	margin-left: -16px;
+	cursor: pointer;
+	animation: gudieArrow 2s linear infinite;
+}
+
+/*----------------------------page-1----------------------------*/
+.page-1 .bg-1 {
+	width: 100%;
+	height: 100%;
+}
+
+.page-1 .bg-2 {
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 255px;
+}
+
+.page-1 .bg-3 {
+	top: 14px;
+	left: 40px;
+	width: 47px;
+	height: 47px;
+}
+
+.page-1 .bg-4 {
+	top: 22px;
+	left: 102px;
+	width: 94px;
+	height: 32px;
+}
+
+.page-1 .standard-content .i-1 {
+	bottom: 404px;
+	left: 295px;
+	width: 679px;
+	height: 405px;
+}
+
+.page-1 .standard-content .i-2 {
+	bottom: 0;
+	left: -298px;
+	width: 927px;
+	height: 831px;
+}
+
+.page-1 .standard-content .btn {
+	bottom: 300px;
+	width: 196px;
+	height: 58px;
+	cursor: pointer;
+}
+
+.page-1 .standard-content .register {
+	left: 739px;
+}
+
+.page-1 .standard-content .logoin {
+	left: 519px;
+}
