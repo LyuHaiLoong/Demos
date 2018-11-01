@@ -8,8 +8,7 @@ body {
 	width: 100%;
 	height: 100%;
 	min-width: 1200px;
-	min-height: 560px;
-	/*overflow: hidden;*/
+	min-height: 560px;	/*overflow: hidden;*/
 }
 
 body {
@@ -26,6 +25,7 @@ li {
 	list-style: none;
 	cursor: pointer;
 }
+
 h2,
 p {
 	margin: 0;
@@ -86,7 +86,8 @@ a:hover {
 header {
 	font-size: 0;
 }
-.btn {
+
+header .btn {
 	width: 96px;
 	height: 40px;
 	line-height: 40px;
@@ -96,7 +97,7 @@ header {
 	outline: none;	/*vertical-align: bottom;  用于官网原写法按钮对齐*/
 }
 
-.btn a {
+header .btn a {
 	display: block;
 	height: 100%;
 	color: inherit;
@@ -155,7 +156,7 @@ header {
 */
 
 /*改进写法，利用CSS方法居中，不适用position + px定位*/
-.nav-top {
+header.nav-top {
 	top: -76px;
 	left: 0;
 	width: 100%;
@@ -171,26 +172,26 @@ header {
 	transition: top .3s;
 }
 
-.logo-left {
+header .logo-left {
 	margin-top: -1px;
 	margin-left: 40px;
 	width: 47px;
 	height: 47px;
 }
 
-.logo-right {
+header .logo-right {
 	margin-left: 15px;
 	width: 94px;
 	height: 32px;
 }
 
-.nav-top .register {
+header .register {
 	color: #f85959;
 	background: #fff;
 	border: 1px solid #f85959;
 }
 
-.nav-top .logoin {
+header .logoin {
 	margin-left: 14px;
 	margin-right: 40px;
 	color: #fff;
@@ -217,7 +218,7 @@ header {
 	transform: translate(-50%, -50%);
 }
 
-.carousel-btns li {
+.carousel-btns ul li {
 	width: 10px;
 	height: 10px;
 	margin: 10px 0;
@@ -225,7 +226,7 @@ header {
 	border-radius: 50%;
 }
 
-.carousel-btns li.active {
+.carousel-btns ul li.active {
 	background: #fff;
 	border: 4px solid #f95e58;
 	-webkit-transform: translateX(-4px);
@@ -279,6 +280,12 @@ header {
 	line-height: 18px;
 }
 
+/*单页按钮*/
+.page .btn * {
+	width: 100%;
+	height: 100%;
+}
+
 /*导航箭头*/
 .page .guide-arrow {
 	left: 50%;
@@ -287,7 +294,6 @@ header {
 	height: 30px;
 	margin-left: -16px;
 	cursor: pointer;
-	animation: gudieArrow 2s linear infinite;
 }
 
 /*----------------------------page-1----------------------------*/
@@ -351,9 +357,11 @@ header {
 	top: 180px;
 	line-height: 56px;
 }
+
 .page-2 .standard-content .text {
 	top: 244px;
 }
+
 .page-2 .standard-content .link {
 	top: 352px;
 	width: 250px;
@@ -361,6 +369,7 @@ header {
 	font-size: 18px;
 	line-height: 18px;
 }
+
 .page-2 .standard-content .btn {
 	top: 394px;
 	left: -13px;
@@ -374,18 +383,21 @@ header {
 	width: 514px;
 	height: 319px;
 }
+
 .page-2 .standard-content .i-2 {
 	top: 448px;
 	left: 372px;
 	width: 105px;
 	height: 58px;
 }
+
 .page-2 .standard-content .i-3 {
 	top: 521px;
 	left: 403px;
 	width: 119px;
 	height: 71px;
 }
+
 .page-2 .standard-content .i-4 {
 	top: 523px;
 	left: 631px;
@@ -400,6 +412,7 @@ header {
 	height: 666px;
 	opacity: .65;
 }
+
 .page-2 .standard-content .loop div {
 	top: 0;
 	right: 0;
@@ -407,12 +420,18 @@ header {
 	left: 0;
 	border: 1px solid #979797;
 	border-radius: 50%;
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-ms-transform: scale(0);
+	-o-transform: scale(0);
+	transform: scale(0);
 }
 
 /*----------------------------page-3----------------------------*/
 .page-3 .standard-content .title {
 	top: 155px;
 }
+
 .page-3 .standard-content .text {
 	top: 280px;
 }
@@ -421,11 +440,12 @@ header {
 	top: 340px;
 }
 
-.page-3 .standard-content .icon-list img{
+.page-3 .standard-content .icon-list img {
 	width: 59px;
 	height: 59px;
 }
-.page-3 .standard-content .icon-list .icon-4{
+
+.page-3 .standard-content .icon-list .icon-4 {
 	margin-bottom: 12px;
 	width: 45px;
 	height: 45px;
@@ -437,48 +457,240 @@ header {
 	width: 867px;
 	height: 502px;
 }
+
 .page-3 .standard-content .i-2 {
 	top: 525px;
 	left: 680px;
-	width:	100px;
-	height:	50px;
+	width: 100px;
+	height: 50px;
 }
+
 .page-3 .standard-content .i-3 {
 	top: 539px;
 	left: 51px;
-	width:	117px;
-	height:	95px;
-} 
+	width: 117px;
+	height: 95px;
+}
+
 .page-3 .standard-content .i-4 {
 	top: 354px;
 	left: 332px;
-	width:	476px;
-	height:	345px;
-}  
+	width: 476px;
+	height: 345px;
+}
+
 .page-3 .standard-content .i-5 {
 	top: 462px;
 	left: 741px;
 	width: 101px;
 	height: 75px;
-} 
+}
+
 .page-3 .standard-content .i-6 {
 	top: 437px;
 	left: 814px;
 	width: 120px;
 	height: 97px;
 }
+
 .page-3 .standard-content .i-7 {
 	top: 613px;
 	left: 171px;
 	width: 192px;
 	height: 91px;
 }
+
 .page-3 .standard-content .i-8 {
 	top: 550px;
 	left: 733px;
-	width:138px;
+	width: 138px;
 	height: 85px;
-} 
+}
 
+/*-----------------------------------------------------------CSS动画-----------------------------------------------------*/
 
+/*----------------------------page页公共动画---------------------------*/
 
+/*淡入与淡出*/
+.standard-content * {
+	-webkit-transition: all 0.5s cubic-bezier(.165, .84, .44, 1);
+	-moz-transition: all 0.5s cubic-bezier(.165, .84, .44, 1);
+	-ms-transition: all 0.5s cubic-bezier(.165, .84, .44, 1);
+	-o-transition: all 0.5s cubic-bezier(.165, .84, .44, 1);
+	transition: all 0.5s cubic-bezier(.165, .84, .44, 1);
+}
+
+.in *:not(.btn) {
+
+	/*按钮和按钮内的img图片都加上位移的话，相当于位移了两段距离，所以要么给父元素移除位移，要么给img移除位移。因为:not()无法选择.btn下的元素，所以移除.btn的位移。然后把动画延迟加到.btn下的img上*/
+	opacity: 0;
+	-webkit-transform: translateY(40px);
+	-moz-transform: translateY(40px);
+	-ms-transform: translateY(40px);
+	-o-transform: translateY(40px);
+	transform: translateY(40px);
+}
+
+/*guide-arrow*/
+@keyframes arrow-move {
+	0% {
+		-webkit-transform: translateY(0);
+		-moz-transform: translateY(0);
+		-ms-transform: translateY(0);
+		-o-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	50% {
+		-webkit-transform: translateY(20px);
+		-moz-transform: translateY(20px);
+		-ms-transform: translateY(20px);
+		-o-transform: translateY(20px);
+		transform: translateY(20px);
+	}
+
+	100% {
+		-webkit-transform: translateY(0);
+		-moz-transform: translateY(0);
+		-ms-transform: translateY(0);
+		-o-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+}
+
+.guide-arrow {
+	animation: arrow-move 2s ease infinite;
+}
+
+/*----------------------------page-1----------------------------*/
+
+/*----------------------------page-2----------------------------*/
+
+/*图标进入延迟*/
+.page-2 .standard-content .text {
+	transition-delay: 80ms;
+}
+
+.page-2 .standard-content .link {
+	transition-delay: .16s;
+}
+
+.page-2 .standard-content .btn * {
+
+	/*与.btn移除动画效果呼应，将延迟加到子元素上*/
+	transition-delay: .16s;
+}
+
+.page-2 .standard-content .i-1 {
+	transition-delay: .24s;
+}
+
+.page-2 .standard-content .i-2 {
+	transition-delay: .28s;
+}
+
+.page-2 .standard-content .i-3 {
+	transition-delay: .32s;
+}
+
+.page-2 .standard-content .i-4 {
+	transition-delay: .36s;
+}
+
+/*圈圈循环*/
+@keyframes loop {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(.5);
+		-moz-transform: scale(.5);
+		-ms-transform: scale(.5);
+		-o-transform: scale(.5);
+		transform: scale(.5);
+	}
+
+	30% {
+		opacity: .7;
+	}
+
+	70% {
+		opacity: .1;
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+
+}
+
+.page-2 .standard-content .loop div {
+	animation: loop 7s linear infinite;
+}
+
+.page-2 .standard-content .loop .loop-2 {
+	animation-delay: 2s;
+}
+
+.page-2 .standard-content .loop .loop-3 {
+	animation-delay: 4s;
+}
+
+.page-2 .standard-content .loop .loop-4 {
+	animation-delay: 6s;
+}
+
+/*----------------------------page-3----------------------------*/
+
+/*图标进入延迟*/
+.page-3 .standard-content .title {
+	transition-delay: 35ms;
+}
+
+.page-3 .standard-content .text {
+	transition-delay: 95ms;
+}
+
+.page-3 .standard-content .icon-list .icon-1 {
+	transition-delay: 155ms;
+}
+
+.page-3 .standard-content .icon-list .icon-2 {
+	transition-delay: 215ms;
+}
+
+.page-3 .standard-content .icon-list .icon-3 {
+	transition-delay: 275ms;
+}
+
+.page-3 .standard-content .icon-list .icon-4 {
+	transition-delay: 335ms;
+}
+
+.page-3 .standard-content .icon-list .icon-5 {
+	transition-delay: 395ms;
+}
+
+.page-3 .standard-content .icon-list .icon-6 {
+	transition-delay: 455ms;
+}
+
+.page-3 .standard-content .i-3 {
+	transition-delay: 655ms;
+}
+
+.page-3 .standard-content .i-4 {
+	transition-delay: 715ms;
+}
+
+.page-3 .standard-content .i-5 {
+	transition-delay: 775ms;
+}
+
+.page-3 .standard-content .i-6 {
+	transition-delay: 835ms;
+}
