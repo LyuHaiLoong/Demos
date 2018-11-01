@@ -362,22 +362,34 @@ function addChild(ele, node, n, className, boolean) {
     //添加节点
     if (boolean) {
         for (let i = 0; i < parent.length; i++) {
+            //创建容器碎片
+            const fragment = document.createDocumentFragment();
+            //保存子节点，用于返回值
             obj.children[i] = [];
+
             for (let j = 0; j < n; j++) {
                 const target = document.createElement(node);
                 target.className = className;
-                parent[i].appendChild(target);
+                fragment.appendChild(target);
+                //添加子节点到数组，用于返回值
                 obj.children[i][j] = target;
             }
+
+            parent[i].appendChild(fragment)
         }
     } else {
+        //创建碎片容器
+        const fragment = document.createDocumentFragment();
+
         for (let i = 0; i < n; i++) {
             const target = document.createElement(node);
             target.className = className;
-            parent.appendChild(target);
-
-            obj.children.push(target);
+            fragment.appendChild(target);
+            //添加子节点，用于返回值
+            obj.children[i] = target;
         }
+        //将碎片容器一次性添加到父节点
+        parent.appendChild(fragment);
     }
 
     //返回参数，供动画函数调用

@@ -63,7 +63,7 @@ setInterval(function() {
                     value: 0,
                     time: timer,
                     flag: false,
-                    fn: function() {
+                    fn: () => {
                         obj.parent.removeChild(obj.children[i]);
                     }
                 });
@@ -106,7 +106,7 @@ setInterval(
                 value: flag % 2 ? [-left, -bottom] : [left, bottom],
                 time: timer += 500,
                 flag: false,
-                fn: function() {
+                fn: () => {
                     requestAnimation({
                         ele: clouds[i],
                         attr: ["left", "bottom"],

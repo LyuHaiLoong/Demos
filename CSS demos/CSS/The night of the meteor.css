@@ -14,6 +14,10 @@
       overflow: hidden;
   }
   /*  ------------画布 ------------ */
+  .container {
+    position: relative;
+    height: 100%;
+  }
   /* 遮罩层 */
   
   #mask {
@@ -45,7 +49,7 @@
   }
   /* 闪烁星星 */
   
-  .blink {
+  #stars .blink {
       position: absolute;
       width: 1px;
       height: 1px;
@@ -254,7 +258,7 @@
   }
   /* 流星 */
   
-  .star {
+  #sky .star {
       position: absolute;
       opacity: 0;
       animation: fall 5s linear infinite;
