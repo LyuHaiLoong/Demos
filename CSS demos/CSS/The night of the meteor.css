@@ -56,64 +56,64 @@ body {
   background: rgba(255, 255, 255, 1);
   border-radius: 50%;
   z-index: 10000;
-  animation: blingbling 2s linear infinite;
+  animation: blingbling 3s linear infinite;
 }
 
-.blink-1 {
+#stars .blink-1 {
   top: 100px;
   left: 100px;
   animation-delay: 1.5s;
 }
 
-.blink-2 {
+#stars .blink-2 {
   top: 300px;
   left: 500px;
   animation-delay: 2.3s;
 }
 
-.blink-3 {
+#stars .blink-3 {
   top: 400px;
   left: 800px;
   animation-delay: 1.8s;
 }
 
-.blink-4 {
+#stars .blink-4 {
   top: 100px;
   left: 1000px;
   animation-delay: 2.7s;
 }
 
-.blink-5 {
+#stars .blink-5 {
   top: 200px;
   left: 300px;
-  animation-delay: 3.2s;
+  animation-delay: 5s;
 }
 
-.blink-6 {
+#stars .blink-6 {
   top: 150px;
   left: 400px;
-  animation-delay: 2.9s;
+  animation-delay: 2s;
 }
 
-.blink-7 {
+#stars .blink-7 {
   top: 500px;
   left: 800px;
   animation-delay: 3.6s;
 }
 
-.blink-8 {
+#stars .blink-8 {
   top: 300px;
   left: 600px;
-  animation-delay: 4.1s;
+  animation-delay: 1s;
 }
 
-.blink-9 {
+#stars .blink-9 {
   top: 400px;
   left: 1000px;
   animation-delay: 4.5s;
 }
 
-.blink-10 {
+#stars .blink-10 {
   top: 100px;
   left: 700px;
   animation-delay: 5s;
