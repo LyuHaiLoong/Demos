@@ -142,7 +142,7 @@ class CountDown {
 
 const run = new CountDown(".mask", "input", "span");
 run.init(window, "onkeyup", "enter",function() {
-	setStyle(run.dom,"transform","scale(0)");
+	setStyle(run.dom,"transform","translateY(-100%)");
 	music("audio",10.5,36,42.5,45,50.5);
 	bg("img",0);
 	run.init = null; //直接把run.init清除，播放后其他操作将都不能执行，只能看完
