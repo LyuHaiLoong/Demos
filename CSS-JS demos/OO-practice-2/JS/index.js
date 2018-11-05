@@ -180,7 +180,6 @@ class CountDown {
 		for (let i = 0; i < this.count.length; i++) {
 			if (this.count[i].innerHTML === ":") continue;
 			this.count[i].innerHTML = 0;
-			console.log(1);
 		}
 	}
 }
