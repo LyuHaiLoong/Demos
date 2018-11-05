@@ -67,6 +67,7 @@ p {
 
 /*a标签*/
 a {
+	color: #406599;
 	text-decoration: none;
 	cursor: pointer;
 	-webkit-transition: opacity .5s;
@@ -344,8 +345,13 @@ header .logoin {
 	cursor: pointer;
 }
 
+.page-1 .standard-content .btn:hover {
+	opacity: 1;
+}
+
 .page-1 .standard-content .register {
 	left: 739px;
+	opacity: 1;
 }
 
 .page-1 .standard-content .logoin {
@@ -365,7 +371,6 @@ header .logoin {
 .page-2 .standard-content .link {
 	top: 352px;
 	width: 250px;
-	color: #406599;
 	font-size: 18px;
 	line-height: 18px;
 }
@@ -507,6 +512,421 @@ header .logoin {
 	height: 85px;
 }
 
+/*----------------------------page-4----------------------------*/
+
+/* 文字内容 */
+.page-4 .standard-content .title {
+	top: 170px;
+	line-height: 56px;
+}
+
+.page-4 .standard-content .text {
+	top: 238px;
+	line-height: 30px;
+}
+
+/* 右背景图 */
+.page-4 .bg-1 {
+	left: 236px;
+	top: 215px;
+	height: 502px;
+	width: 867px;
+}
+
+/* 左下图片*/
+.page-4 .i-1 {
+	left: 97px;
+	top: 390px;
+	height: 303px
+}
+
+/* 堆叠层 */
+
+/* 白底 */
+.page-4 .i-stack-bottom {
+	top: 448px;
+	left: 377.7px;
+	height: 234.5px;
+	width: 418px
+}
+
+/* 堆叠层 上4 */
+.page-4 .i-stack {
+	height: 188px;
+	width: 331px
+}
+
+.page-4 .i-stack-1 {
+	top: 467px;
+	left: 413px;
+	height: 141px;
+	width: 283px
+}
+
+.page-4 .i-stack-2 {
+	top: 420px;
+	left: 414px
+}
+
+.page-4 .i-stack-3 {
+	top: 435px;
+	left: 414px
+}
+
+.page-4 .i-stack-4 {
+	top: 451px;
+	left: 414px
+}
+
+/* 右三固定 */
+.i-appends {
+	background-color: #406599
+}
+
+.page-4 .standard-content .i-append-4 {
+	left: 722px;
+	top: 437px;
+	height: 66px;
+	width: 38px;
+}
+
+.page-4 .standard-content .i-append-5 {
+	left: 768px;
+	top: 468px;
+	height: 61px;
+	width: 34px;
+	opacity: .7
+}
+
+.page-4 .standard-content .i-append-6 {
+	left: 810px;
+	top: 497px;
+	height: 56px;
+	width: 30px;
+	opacity: .5
+}
+
+/* 活动的三个 */
+.page-4 .i-append-blue {
+	left: 623px;
+	top: 292px;
+}
+
+.page-4 img.i-append-1 {
+	height: 83px;
+	width: 53px;
+	-webkit-animation-delay: 0ms;
+	-moz-animation-delay: 0ms;
+	animation-delay: 0ms
+}
+
+.page-4 img.i-append-2 {
+	height: 113px;
+	width: 54px;
+	-webkit-animation-delay: -3s;
+	-moz-animation-delay: -3s;
+	animation-delay: -3s
+}
+
+.page-4 img.i-append-3 {
+	height: 67px;
+	width: 69px;
+	-webkit-animation-delay: -6s;
+	-moz-animation-delay: -6s;
+	animation-delay: -6s
+}
+
+/*----------------------------page-5----------------------------*/
+
+/* 文字内容 */
+.page-5 .standard-content .title {
+	top: 180px;
+}
+
+.page-5 .standard-content .text {
+	top: 244px;
+}
+
+/* 六个a链接 */
+.page-5 .standard-content .p2 {
+	font-size: 26px;
+	color: inherit;
+	line-height: 28.8px;
+	left: 264px;
+	top: 433px
+}
+
+.page-5 .standard-content .p3 {
+	font-size: 20px;
+	left: 400px;
+	top: 356px
+}
+
+.page-5 .standard-content .p3,
+.page-5 .standard-content .p4 {
+	line-height: 24px
+}
+
+.page-5 .standard-content .p4 {
+	font-size: 22px;
+	left: 509px;
+	top: 422px
+}
+
+.page-5 .standard-content .p5 {
+	font-size: 16px;
+	line-height: 19.2px;
+	left: 541px;
+	top: 307px
+}
+
+.page-5 .standard-content .p6 {
+	font-size: 18px;
+	line-height: 23.04px;
+	left: 644px;
+	top: 382px
+}
+
+.page-5 .p7 {
+	font-size: 14px;
+	line-height: 16.8px;
+	left: 677px;
+	top: 281px
+}
+
+/* 对应图片 */
+.page-5 .i-2 {
+	height: 154px;
+	width: 130px;
+	left: 251px;
+	top: 474px;
+}
+
+.page-5 .i-3 {
+	height: 106px;
+	width: 90px;
+	left: 395px;
+	top: 395px;
+}
+
+.page-5 .i-4 {
+	height: 123px;
+	width: 104px;
+	left: 501px;
+	top: 459px;
+}
+
+.page-5 .i-5 {
+	height: 69px;
+	width: 58px;
+	left: 541px;
+	top: 337px;
+}
+
+.page-5 .i-6 {
+
+	/* height: 83px; */
+	height: 70px;
+	left: 645px;
+	top: 417px;
+}
+
+.page-5 .i-7 {
+	height: 57px;
+	width: 47px;
+	left: 681px;
+	top: 308px;
+}
+
+.page-5 .i3-bottom {
+	height: 23px;
+	width: 43px;
+	left: 418px;
+	top: 490px;
+}
+
+.page-5 .i5-bottom {
+	height: 17px;
+	width: 31px;
+	left: 558px;
+	top: 397px;
+}
+
+.page-5 .i4-bottom {
+	height: 23px;
+	width: 43px;
+	left: 531px;
+	top: 575px;
+}
+
+.page-5 .i6-bottom {
+	height: 17px;
+	width: 31px;
+	left: 661px;
+	top: 491px;
+}
+
+.page-5 .i7-bottom {
+	height: 17px;
+	width: 31px;
+	left: 692px;
+	top: 357px;
+}
+
+.page-5 .i2-bottom {
+	left: 294px;
+	top: 625px;
+	height: 23px;
+	width: 43px;
+}
+
+.page-5 .i-1 {
+	height: 580px;
+	width: 1302px;
+	left: -206px;
+	top: 160px;
+}
+
+/*----------------------------page-6----------------------------*/
+.page-6>.standard-content {
+	width: 900px;
+	font-family: PingFangSC-Medium;
+}
+
+.page-6 .bg-bottom {
+	bottom: 0;
+	width: 100%;
+	height: 526px
+}
+
+.page-6 .standard-content .title {
+	left: 1px;
+	bottom: 500px;
+}
+
+.page-6 .standard-content .text {
+	left: 1px;
+	bottom: 451px;
+}
+
+.page-6 .standard-content .link {
+	left: 1px;
+	bottom: 383px;
+	width: 200px;
+	font-size: 18px;
+}
+
+.page-6 .i1 {
+	left: -6px;
+}
+
+.page-6 .i1,
+.page-6 .i2 {
+	height: 244px;
+	width: 104px;
+	bottom: 478px
+}
+
+.page-6 .i2 {
+	left: 138px
+}
+
+.page-6 .i3 {
+	height: 346px;
+	width: 1129px;
+	left: -111px;
+	bottom: 268px;
+}
+
+.page-6 .i4 {
+	height: 164px;
+	width: 659px;
+	left: 122px;
+	bottom: 131px
+}
+
+.page-6 .btn {
+	height: 40px;
+	width: 136px;
+	font-size: 14px;
+	letter-spacing: 0;
+	line-height: 40px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-border-radius: 26px;
+	-moz-border-radius: 26px;
+	border-radius: 26px;
+	text-align: center
+}
+
+.page-6 .btn a {
+	color: inherit;
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	position: static;
+}
+
+.page-6 .register {
+	color: #f85959;
+	background-color: #fff;
+	border: 1px solid #f85959;
+	left: 642px;
+	bottom: 383px
+}
+
+.page-6 .login {
+	color: #fff;
+	background-color: #f85959;
+	left: 798px;
+	bottom: 383px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	font-size: 14px;
+	color: #fff;
+	letter-spacing: 0;
+	text-align: center
+}
+
+.footer a {
+	color: #fff;
+}
+
+.footer .footer-1 {
+	margin-bottom: 19px;
+}
+
+.footer .footer-2 {
+	margin-bottom: 37px;
+}
+
+.footer .v-line {
+	line-height: 20px;
+	margin: 0 20px;
+	border-left: 1px solid #fff;
+}
+
+.logo_left {
+	position: absolute;
+	left: 40px;
+	top: 14px;
+	height: 47px;
+	width: 47px;
+}
+
+.logo_right {
+	position: absolute;
+	left: 102px;
+	top: 22px;
+	height: 32px;
+	width: 94px;
+}
+
 /*-----------------------------------------------------------CSS动画-----------------------------------------------------*/
 
 /*----------------------------page页公共动画---------------------------*/
@@ -520,7 +940,7 @@ header .logoin {
 	transition: all 0.5s cubic-bezier(.165, .84, .44, 1);
 }
 
-.in *:not(.btn) {
+.page .in *:not(.btn) {
 
 	/*按钮和按钮内的img图片都加上位移的话，相当于位移了两段距离，所以要么给父元素移除位移，要么给img移除位移。因为:not()无法选择.btn下的元素，所以移除.btn的位移。然后把动画延迟加到.btn下的img上*/
 	opacity: 0;
@@ -693,4 +1113,146 @@ header .logoin {
 
 .page-3 .standard-content .i-6 {
 	transition-delay: 835ms;
+}
+
+/*----------------------------page-4----------------------------*/
+.page-4 .in .i-1 {
+	-webkit-transform: translateY(60px);
+	-moz-transform: translateY(60px);
+	-ms-transform: translateY(60px);
+	-o-transform: translateY(60px);
+	transform: translateY(60px);
+}
+
+.page-4 .standard-content .i-stack-bottom {
+	transition-delay: .54s;
+}
+
+.page-4 .in .i-stack-bottom {
+	-webkit-transform: translateY(240px);
+	-moz-transform: translateY(240px);
+	-ms-transform: translateY(240px);
+	-o-transform: translateY(240px);
+	transform: translateY(240px);
+}
+
+.page-4 .standard-content .i-stack-4 {
+	transition-delay: .48s;
+}
+
+.page-4 .in .i-stack-4 {
+	-webkit-transform: translateY(195px);
+	-moz-transform: translateY(195px);
+	-ms-transform: translateY(195px);
+	-o-transform: translateY(195px);
+	transform: translateY(195px);
+}
+
+.page-4 .standard-content .i-stack-3 {
+	transition-delay: .42s;
+}
+
+.page-4 .in .i-stack-3 {
+	-webkit-transform: translateY(150px);
+	-moz-transform: translateY(150px);
+	-ms-transform: translateY(150px);
+	-o-transform: translateY(150px);
+	transform: translateY(150px);
+}
+
+.page-4 .standard-content .i-stack-2 {
+	transition-delay: .36s;
+}
+
+.page-4 .in .i-stack-2 {
+	-webkit-transform: translateY(105px);
+	-moz-transform: translateY(105px);
+	-ms-transform: translateY(105px);
+	-o-transform: translateY(105px);
+	transform: translateY(105px);
+}
+
+.page-4 .standard-content .i-stack-1 {
+	transition-delay: .3s;
+}
+
+.page-4 .in .i-stack-1 {
+	-webkit-transform: translateY(60px);
+	-moz-transform: translateY(60px);
+	-ms-transform: translateY(60px);
+	-o-transform: translateY(60px);
+	transform: translateY(60px);
+}
+
+.page-4 .i-append-blue {
+	-webkit-animation: blues 9s cubic-bezier(1, 0, 0, 1) infinite;
+	-moz-animation: blues 9s cubic-bezier(1, 0, 0, 1) infinite;
+	animation: blues 9s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes blues {
+	0% {
+		-webkit-transform: translate(0) scale(.75);
+		-moz-transform: translate(0) scale(.75);
+		transform: translate(0) scale(.75);
+		opacity: .7
+	}
+
+	33% {
+		-webkit-transform: translate(22px, 31px);
+		-moz-transform: translate(22px, 31px);
+		transform: translate(22px, 31px);
+		opacity: 1;
+		z-index: 2
+	}
+
+	66% {
+		-webkit-transform: translate(90px, 65px) scale(.75);
+		-moz-transform: translate(90px, 65px) scale(.75);
+		transform: translate(90px, 65px) scale(.75);
+		opacity: .7
+	}
+
+	100% {
+		-webkit-transform: translate(0) scale(.75);
+		-moz-transform: translate(0) scale(.75);
+		transform: translate(0) scale(.75);
+		opacity: .7
+	}
+
+}
+
+/*----------------------------page-5----------------------------*/
+.page-5 .back-timing {
+	transition-timing-function: cubic-bezier(.18, .9, .32, 1.28);
+}
+
+.page-5 .standard-content .i-2,
+.page-5 .standard-content .i2-bottom {
+	transition-delay: .32s;
+}
+
+.page-5 .standard-content .i-3,
+.page-5 .standard-content .i3-bottom {
+	transition-delay: .54s;
+}
+
+.page-5 .standard-content .i-4,
+.page-5 .standard-content .i4-bottom {
+	transition-delay: .76s;
+}
+
+.page-5 .standard-content .i-5,
+.page-5 .standard-content .i5-bottom {
+	transition-delay: .98s;
+}
+
+.page-5 .standard-content .i-6,
+.page-5 .standard-content .i6-bottom {
+	transition-delay: 1.2s;
+}
+
+.page-5 .standard-content .i-7,
+.page-5 .standard-content .i7-bottom {
+	transition-delay: 1.42s;
 }
