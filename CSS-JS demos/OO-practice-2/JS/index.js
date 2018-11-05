@@ -12,8 +12,8 @@
 class CountDown {
 	constructor(ele, ...target) {
 		this.dom = typeof ele === "string" ? document.querySelector(ele) : ele;
-		this.time = this.dom.querySelector(target[0]);
-		this.count = this.dom.querySelectorAll(target[1]);
+		this.time = this.dom.querySelector(target[0]); //时间输入框
+		this.count = this.dom.querySelectorAll(target[1]); //时间显示标签
 		this.timer = null; //定时器
 	}
 	// 所有方法
