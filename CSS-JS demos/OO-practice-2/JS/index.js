@@ -7,7 +7,10 @@
 //				 2）countValue: 可通过传入一个时间参数，计算当前时间与参数的时间差（时、分、秒），不传参数返回0。返回结果为对象形式{gap:时间戳差值,hours:小时时间差，minutes:分钟时间差，seconds:秒时间差};
 //				 3）insertTime: 可通过传入一个时间参数，在页面中显示时间差。同时，如果时价差为0，函数将返回true，用于定时器的打断;
 //				 4）countTime: 可通过传入一个时间参数，在页面中执行倒计时。不传参倒计时为0;
-
+//-------------------亮点-------------------
+//1.通过audio标签的currentTime属性控制音乐的播放断点;
+//2.倒计时的显示具有判断逻辑，只在需要更改的情况下，HTML结构中的innerHTML才会重新赋值;
+//3.将想法通过各种渠道结合的方式实现;
 
 class CountDown {
 	constructor(ele, ...target) {
@@ -104,17 +107,46 @@ class CountDown {
 		const result = this.countValue(t);
 		if (!result) return "typeError"; //时间输入错误的话，不执行下边代码，并返回typeError，供打断定时器
 
-		if (result.gap > 3600) { //时间差不足小时的话，不改变小时的innerHTML
-			this.count[0].innerHTML = result.hours[0];
+		const hour = ~~(this.count[0].innerHTML + this.count[1].innerHTML),
+					minute = ~~(this.count[3].innerHTML + this.count[4].innerHTML);
+
+		//小时赋值
+		if (~~result.hours - hour) {
+			if (!~~this.count[0].innerHTML && ~~result.hours[0]) this.count[0].innerHTML = result.hours[0];//初始化赋值
+			if (result.hours[1] === "9") this.count[0].innerHTML = result.hours[0]; //只有在个位数为9，即需要十位-1时，才给十位赋值
 			this.count[1].innerHTML = result.hours[1];
 		}
-		if (result.gap > 60) { //时间差不足分钟的话，不改变分钟的innerHTML
-			this.count[3].innerHTML = result.minutes[0];
+		//分钟赋值
+		if (~~result.minutes - minute) {
+			if (!~~this.count[3].innerHTML && ~~result.minutes[0]) this.count[3].innerHTML = result.minutes[0];//初始化赋值
+			if (result.minutes[1] === "9") this.count[3].innerHTML = result.minutes[0]; //只有在个位数为9，即需要十位-1时，才给十位赋值
 			this.count[4].innerHTML = result.minutes[1];
 		}
-		this.count[6].innerHTML = result.seconds[0];
+		//秒赋值
+		if (!~~this.count[6].innerHTML && ~~result.seconds[0]) this.count[6].innerHTML = result.seconds[0];//初始化赋值
+		if (result.seconds[1] === "9") this.count[6].innerHTML = result.seconds[0]; //只有在个位数为9，即需要十位-1时，才给十位赋值
 		this.count[7].innerHTML = result.seconds[1];
+		
+		//失败思路
+		// //个位秒数赋值
+		// this.count[7].innerHTML = result.seconds[1];
+		// //如果秒数十位为0，并且计算结果不为0时，秒数十位赋值————初始化
+		// if(!~~this.count[6] && result.seconds[0]) { this.count[6].innerHTML = result.seconds[0]; }
+		// //如果秒数个位为9，则给秒数十位赋值
+		// if(result.seconds[1] === "9") { this.count[6].innerHTML = result.seconds[0]; }
 
+		// //如果分钟个位为0，但是计算结果不为0，分钟个位赋值————初始化
+		// if (!~~this.count[4] && result.minutes[1]) { this.count[4].innerHTML = result.minutes[1]; }
+		// //如果秒数为0，则给分钟个位赋值
+		// if(!~~result.seconds) { this.count[4].innerHTML = result.minutes[1]; }
+		// //如果分钟十位为0，但是计算结果不为0，就给分钟十位赋值————初始化
+		// if (!this.count[3] && result.minutes[0]) { this.count[3].innerHTML = result.minutes[0]; }
+		// //如果分钟个位为9，则给分钟十位赋值
+		// if(result.minutes[1] === "9") { this.count[3].innerHTML = result.minutes[0]; }
+
+		// //如果小时个位为0，但是计算结果不为0，小时个位赋值————初始化
+		// if (!~~this.count[1] && result.hours[1]) { this.count[1].innerHTML = result.hours[1]; }
+		
 		//如果时间差已经为0，返回true，供打断计时器
 		if(!result.gap) return true;
 	}
