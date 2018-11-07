@@ -370,7 +370,7 @@ function addChild(ele, node, n, className, boolean) {
             for (let j = 0; j < n; j++) {
                 const target = document.createElement(node);
                 target.className = className;
-                fragment.appendChild(target);
+                fragment.append(target);
                 //添加子节点到数组，用于返回值
                 obj.children[i][j] = target;
             }
@@ -384,7 +384,7 @@ function addChild(ele, node, n, className, boolean) {
         for (let i = 0; i < n; i++) {
             const target = document.createElement(node);
             target.className = className;
-            fragment.appendChild(target);
+            fragment.append(target);
             //添加子节点，用于返回值
             obj.children[i] = target;
         }
