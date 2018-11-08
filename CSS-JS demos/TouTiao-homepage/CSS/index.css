@@ -8,7 +8,8 @@ body {
 	width: 100%;
 	height: 100%;
 	min-width: 1200px;
-	min-height: 560px;	/*overflow: hidden;*/
+	min-height: 560px;	
+	overflow: hidden;
 }
 
 body {
@@ -172,7 +173,10 @@ header.nav-top {
 	-o-transition: top .3s;
 	transition: top .3s;
 }
-
+/*JS控制进出*/
+header.scroll {
+	top: 0;
+}
 header .logo-left {
 	margin-top: -1px;
 	margin-left: 40px;
@@ -243,6 +247,7 @@ header .logoin {
 
 /*总包裹层*/
 .carousel {
+	position: relative;
 	height: 100%;
 	-webkit-transition: all .8s;
 	-moz-transition: all .8s;
