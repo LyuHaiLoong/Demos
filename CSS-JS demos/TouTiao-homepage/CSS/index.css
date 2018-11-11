@@ -8,7 +8,7 @@ body {
 	width: 100%;
 	height: 100%;
 	min-width: 1200px;
-	min-height: 560px;	
+	min-height: 560px;
 	overflow: hidden;
 }
 
@@ -173,10 +173,12 @@ header.nav-top {
 	-o-transition: top .3s;
 	transition: top .3s;
 }
+
 /*JS控制进出*/
 header.scroll {
 	top: 0;
 }
+
 header .logo-left {
 	margin-top: -1px;
 	margin-left: 40px;
@@ -223,7 +225,7 @@ header .logoin {
 	transform: translate(-50%, -50%);
 }
 
-.carousel-btns ul li {
+.carousel-btns .carousel-btn {
 	width: 10px;
 	height: 10px;
 	margin: 10px 0;
@@ -231,7 +233,7 @@ header .logoin {
 	border-radius: 50%;
 }
 
-.carousel-btns ul li.active {
+.carousel-btns .carousel-btn.active {
 	background: #fff;
 	border: 4px solid #f95e58;
 	-webkit-transform: translateX(-4px);
@@ -248,12 +250,13 @@ header .logoin {
 /*总包裹层*/
 .carousel {
 	position: relative;
+	top: 0;
 	height: 100%;
-	-webkit-transition: all .8s;
-	-moz-transition: all .8s;
-	-ms-transition: all .8s;
-	-o-transition: all .8s;
-	transition: all .8s;
+	-webkit-transition: top .8s;
+	-moz-transition: top .8s;
+	-ms-transition: top .8s;
+	-o-transition: top .8s;
+	transition: top .8s;
 }
 
 /*单页包裹层*/
