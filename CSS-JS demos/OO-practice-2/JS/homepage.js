@@ -1,31 +1,52 @@
 ! function(t) {
+	//空对象e
 	var e = {};
 
+	//函数n
 	function n(i) {
-		if (e[i]) return e[i].exports;
-		var a = e[i] = {
-			i: i,
-			l: !1,
-			exports: {}
+		if (e[i]) return e[i].exports; //node.js属性？？？
+		//a指向e[i]
+		var a = e[i] = { //给对象e赋值
+			i: i, //i = 属性
+			l: !1, //l = false
+			exports: {} //exports为空对象
 		};
+		//t为参数，调用t[i]，作用域为a.exports，传入参数a、a.exports、n函数
+		//修改a.l为true
+		//返回值a.exports
 		return t[i].call(a.exports, a, a.exports, n), a.l = !0, a.exports
 	}
-	n.m = t, n.c = e, n.d = function(t, e, i) {
-		n.o(t, e) || Object.defineProperty(t, e, {
-			configurable: !1,
-			enumerable: !0,
-			get: i
-		})
-	}, n.n = function(t) {
-		var e = t && t.__esModule ? function() {
-			return t.default
-		} : function() {
-			return t
-		};
-		return n.d(e, "a", e), e
-	}, n.o = function(t, e) {
-		return Object.prototype.hasOwnProperty.call(t, e)
-	}, n.p = "//s2.pstatp.com/pgc/v2/", n(n.s = 2)
+	//n.m赋值为初始参数t
+	//n.c指针指向初始创建的对象e，一旦调用n函数，e的值将发生改变
+	//n.d赋值为函数，传入参数t,e,i
+	n.m = t,
+		n.c = e,
+		n.d = function(t, e, i) {
+			//执行n.o（在45行创建），结果为true，则返回
+			//否则给初始参数t添加e属性，不可删除，可枚举，get函数重新赋值为i
+			n.o(t, e) || Object.defineProperty(t, e, {
+				configurable: !1, //false
+				enumerable: !0, //true
+				get: i
+			})
+		},
+		//n.n函数
+		n.n = function(t) { //接受初始参数t
+			//创建变量e，赋值为初始参数t。并且给初始变量t添加属性
+			var e = t && t.__esModule ? function() {
+				return t.default
+			} : function() {
+				return t
+			};
+			//调用n.d函数（在24行创建），传入内部创建的变量e，属性名"a",get函数值为变量e。返回值为变量e
+			return n.d(e, "a", e), e
+		},
+		//创建n.o函数，接受参数初始变量t，初始创建对象e
+		n.o = function(t, e) {
+			return Object.prototype.hasOwnProperty.call(t, e) //返回对象属性查找，查找对象t中是否含有属性e
+		},
+		n.p = "//s2.pstatp.com/pgc/v2/", //添加属性p，文件路径
+		n(n.s = 2) //调用函数n，，添加属性s并赋值为2，然后传入参数2
 }({
 	"0XDl": function(t, e, n) {
 		n("RW0e");
