@@ -1,3 +1,8 @@
+////////////////
+//整体不够解耦，有待优化 //
+////////////////
+
+
 class Carousel {
 	//构造函数
 	constructor(ele, section, btn, arrow) {
@@ -51,7 +56,7 @@ class Carousel {
 	}
 
 	//---------------初始化调用，执行轮播---------------
-	init() {
+	init(target, className) {
 		//获取高度
 		this.getHeight();
 		//限制变量
@@ -67,7 +72,10 @@ class Carousel {
 							this.addClass(this.section[index - 1], "in");
 						}
 						this.removeClass(this.section[index], "in");
-					})
+					});
+
+					this.addClass(target, className);
+					if (index === 5) this.removeClass(target, className);
 				}
 			} else {
 				if (index > 0) {
@@ -75,12 +83,15 @@ class Carousel {
 						this.removeClass(this.btn[index + 1], "active");
 						this.addClass(this.btn[index], "active");
 						if (index < 4) {
-	 						this.addClass(this.section[index + 1], "in");
- 						}
+							this.addClass(this.section[index + 1], "in");
+						}
 						if (index > 0) {
 							this.removeClass(this.section[index], "in");
 						}
 					})
+
+					this.addClass(target, className);
+					if (index === 0) this.removeClass(target, className);
 				}
 			}
 		}, 2000)
@@ -99,6 +110,9 @@ class Carousel {
 
 					index = i;
 				});
+
+				this.addClass(target, className);
+				if (i === 5 || i === 0) this.removeClass(target, className);
 			}
 		}
 		//箭头点击
@@ -115,11 +129,11 @@ class Carousel {
 					}
 					index = i + 1;
 				})
+
+				this.addClass(target, className);
+				if (i === 4) this.removeClass(target, className);
 			}
 		}
-		// 键盘事件
-		// 
-
 	}
 
 
@@ -155,7 +169,7 @@ class Carousel {
 		}
 
 		if (callback) {
-			setTimeout(callback,1000);
+			setTimeout(callback, 1000);
 		}
 
 		//When transition is over,execute function callback
@@ -253,4 +267,5 @@ class Carousel {
 }
 
 const carousel = new Carousel("main", [".standard-content", true], [".carousel-btn", true], [".guide-arrow", true]);
-carousel.init();
+const nav = document.querySelector(".nav-top");
+carousel.init(nav, "scroll");

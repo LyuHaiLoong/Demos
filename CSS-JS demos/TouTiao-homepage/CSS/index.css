@@ -1192,6 +1192,12 @@ header .logoin {
 	transform: translateY(60px);
 }
 
+.page-4 .in .i-append-blue {
+	animation-name: none;
+	-webkit-animation-name: none;
+	-moz-animation-name: none;
+}
+
 .page-4 .i-append-blue {
 	-webkit-animation: blues 9s cubic-bezier(1, 0, 0, 1) infinite;
 	-moz-animation: blues 9s cubic-bezier(1, 0, 0, 1) infinite;
