@@ -62,8 +62,11 @@ class Carousel {
 		//限制变量
 		let index = 0;
 		//滚动事件
-		window.onmousewheel = this.throttle(key => {
-			if (key.deltaY > 0) {
+		this.mousewheel(window,this.throttle(function(key) {
+			let flag = null;
+			if (key.wheelDelta) flag = key.wheelDelta < 0 ? true : false;
+			else flag = key.detail < 0 ? false : true;
+			if (flag) {
 				if (index < 5) {
 					this.carousel(this.parent, "top", -(++index) * this.height, () => {
 						this.removeClass(this.btn[index - 1], "active");
@@ -94,7 +97,7 @@ class Carousel {
 					if (index === 0) this.removeClass(target, className);
 				}
 			}
-		}, 2000)
+		}, 2000))
 		//点击事件
 		//按钮点击
 		for (let i = 0; i < this.btn.length; i++) {
@@ -136,7 +139,23 @@ class Carousel {
 		}
 	}
 
-
+	mousewheel(ele,callback,boolean,stop,prevent,call) {
+		ele = typeof ele === "string" ? document.querySelector(ele) : ele;
+		if(window.onmousewheel === undefined) {
+			ele.addEventListener("DOMMouseScroll",function(ev) {
+				callback && (call ? callback.call(this,ev) : callback(ev));
+				if (stop) ev.stopPropagation();
+				if (prevent) ev.preventDefault()
+			},boolean)
+		}
+		else {
+			ele.addEventListener("mousewheel",function(ev){
+				callback && (call ? callback.call(this,ev) : callback(ev));
+				if (stop) ev.stopPropagation();
+				if (prevent) ev.preventDefault();
+			},boolean)
+		}		
+	}
 	//---------------获取内容高度值，用于动画赋值---------------
 	getHeight(ele) {
 		ele = ele ? (typeof ele === "string" ? document.querySelector(ele) : ele) : this.parent;
