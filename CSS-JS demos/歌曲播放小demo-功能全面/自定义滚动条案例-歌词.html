@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>自定义滚动条</title>
+</head>
+<link rel=stylesheet href="css/index.css">
+<body>
+  <div class="confirms">
+    <div id="add-message" class="message">
+      <div class="message add">
+        <h3>请输入歌曲名、歌曲链接，及歌词文本</h3>
+        <input type="text" placeholder="请输入歌曲名">
+        <input type="text" placeholder="请输入歌曲链接">
+        <textarea placeholder="可直接复制粘贴"></textarea>
+        <div>
+          <button>确认</button>
+          <button>取消</button>
+        </div>
+      </div>
+    </div>
+    <div id="del-message" class="message">
+      <div class="message del">
+        <h3>确认将歌曲从歌单中删除？</h3>
+        <div>
+          <button>确认</button>
+          <button>取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="decoration">看着丑了点<br>，<br>但是功能还算全面了</div>
+  <div id="music-box">
+    <div id="list-wrap">
+      <div class="list-btns">      
+        <button id="add">添加歌曲</button>
+        <button id="del">删除歌曲</button>
+      </div>
+      <div id="music-list"></div>
+    </div>
+    <div id="box">
+      <div id="lrc">
+        <h3></h3>
+        <p></p>     
+      </div>
+      <div id="bar">
+        <div id="btn"></div>
+      </div>
+    </div>
+    <div id="play-control" class="flex-layout align-top">
+      <p id="load">歌曲加载中...</p>
+      <p id="error">抱歉，歌挂了,刷新一下试试吧</p>
+      <p id="none">没有可以播放的歌曲</p>
+      <div id="ready" class="flex-layout align-bottom">
+        <button id="play">+播放</button>
+        <button id="pause">II暂停</button>
+        <button id="muted">静音</button>
+        <button id="replay">重新播放</button>
+        <button id="volume-plus">音量+</button>
+        <button id="volume-sub">音量-</button>
+        <div id ="volume"></div>
+        <div id="total" class="time"><span>0</span><span>0</span>:<span>0</span><span>0</span></div>
+        <div id="count" class="time"><span>0</span><span>0</span>:<span>0</span><span>0</span></div>
+        <div class="progress-bar">
+          <div id="progress"></div>
+        </div>
+      </div>
+      <audio src="http://www.ytmp3.cn/down/33359.mp3"></audio>
+    </div>
+  </div>
+  <script src="js/super.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/dataControl.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/lrc.js"></script>
+  <script src="js/list.js"></script>
+  <script src="js/index.js"></script>
+  <script>
+    //**********设计内容**********
+    //-----歌词控制
+    // 1）歌词随鼠标滚轮滚动
+    // 2）按住滚动条按钮，拉动歌词
+    // 3）按住滚动条按钮，滚动条改变背景颜色
+    // 4）歌词滚动事件只在歌词框范围内有效，且歌词滚动不会带动window滚动
+    //-----播放控制
+    // 1）点击播放
+    // 2）点击暂停
+    // 3）点击静音，通过改变背景判断选中状态
+    // 4）重新播放
+    // 5）音量控制
+    // 6）歌曲倒计时及进度条
+    // 7）点击进度条切换播放进度
+    // 8）歌曲添加与删除
+    // 9）双击切换播放歌曲
+    // 10）歌词滚动与滚动条按钮拖放
+    //**********设计模式**********
+    // 1）对象中封装属性及方法
+    // 2）播放控制类的方法不多，没有继承歌词控制类的方法
+    // 3）因为没有歌词随音乐滚动的功能（没有找到好的实现方法），所以没有耦合
+    //**********实现功能**********
+    // 1）封装各类方法，具体具体实现及用法见代码
+    // 2）歌词的滚动、拖动
+    // 3）音频的播放、暂停、静音、重新播放
+    //**********坑********** 
+    // 1）HTMLCollection和NodeList中的length属性会被for-in循环枚举
+    // 2）事件的阻止行为需要在事件第一次调用的函数中阻止，否则无效
+    // 3）switch不像if else可以通过return打断函数执行
+    // 4）canplaythrough判断音频/视频是否已经加载到可以不中断播放的状态，用来判断音乐是否成功加载
+    // 5）[u4e00-u9fa5]的正则匹配，除了chrome，其他浏览器如F火狐、苹果、IE、IE-Edge，在我的电脑上都不能实现匹配
+    // 6）class在IE11上不支持？
+    // 7）Object.defineProperty添加的属性，configurable为false不可删除、writable为false不可写、enumerable为false不可枚举
+    // 8) requestAnimationFrame的默认参数timestamp还是挺好用的
+    // 9）overflow-x是个大坑，这货不能裁剪x轴，内容还是会以滚动的方式可以显示；overflow-y可以裁剪
+    // 10）transition可以解决滚动滑动过快的抖动问题，简单省事
+    // 11) audio对象的play()、pause()、paused、muted、duration、currentTime等属性操控音频的播放，视频也差不多是这几个
+    // 12）通过id获取DOM时，如果DOM内容改变，获取值也会动态改变
+    // 13）document.getElementById、querySelector(id)在函数执行完，才会重新刷新，在函数内发生改变再获取时，仍旧是上一次的节点
+    // 14）for-of循环按顺序循环内容，且可以用break打断
+    // 15）以拓展运算符书写形参时，形参始终为数组形式——如function test(a,...b){}，b为数组
+  </script>   
+</body>
+</html>

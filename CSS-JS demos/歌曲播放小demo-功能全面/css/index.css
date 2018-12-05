@@ -1,0 +1,315 @@
+/*reset*/
+html {
+  min-width: 800px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 1000px;
+  background: rgba(0, 0, 0, .3);
+}
+
+h3 {
+  margin-top: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+/*公用属性*/
+.flex-layout {
+  display: flex;
+}
+
+.align-top {
+  align-items: flex-start;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-bottom {
+  align-items: flex-end;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*wrap层*/
+#music-box {
+  position: relative;
+  margin-top: 100px;
+  margin-left: 50%;
+  width: 500px;
+  height: 500px;
+  transform: translateX(-50%);
+}
+/*message层*/
+.confirms button {
+  height: 30px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 5px #000;
+  -webkit-transition: .25s;
+     -moz-transition: .25s;
+      -ms-transition: .25s;
+       -o-transition: .25s;
+          transition: .25s;
+}
+.confirms button:hover {
+  color: #fff;
+  background: #000!important;
+}
+.confirms button:first-child {
+  background: #009999;
+}
+.confirms button:last-child {
+  background: #a60000;
+}
+#add-message {
+  display: none;
+  position: absolute;
+  color: #fff;
+  background: rgba(0,0,0,.9);
+  z-index: 999;
+}
+.message {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+}
+.add,.del {
+  margin: 10% auto auto auto;
+  width: 500px;
+  height: 300px;
+}
+.add *,.del * {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box; 
+}
+
+#del-message {
+  display: none;
+  position: absolute;
+  color: #fff;
+  background: rgba(0,0,0,.9);
+  z-index: 999;
+}
+/*装饰文字*/
+#decoration {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 20px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/*box歌词盒子*/
+#box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, .5);
+  border: 1px solid rgba(0, 0, 0, 1);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#lrc {
+  margin: 0;
+  line-height: 2;
+  text-align: center;
+}
+
+#bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15px;
+  height: 100%;
+  border-left: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  background: #ccc;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px #aaa inset;
+  opacity: 0;
+  transition: .2s;
+}
+
+#btn {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  background: #fff;
+  border-radius: inherit;
+  box-sizing: border-box;
+}
+
+/*歌词列表*/
+#list-wrap {
+  position: absolute;
+  right: 100%;
+  width: 200px;
+  height: 100%;
+  background: rgba(255, 255, 255, .8);
+  border: 1px solid #009999;
+  border-right: none;
+  box-sizing: border-box;
+}
+#list-wrap .list-btns {
+  position: absolute;
+  top: -21px;
+  left: 0;
+  height: 20px;
+}
+
+#list-wrap .list-btns button {
+  height: 100%;
+  background: #000;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+
+#list-wrap .list-btns button:hover {
+  color: #000;
+  background: #eee;
+}
+
+#list-wrap #music-list ul {
+  margin: 0;
+  padding: 0;
+  line-height: 2;
+  list-style: none;
+  overflow: auto;
+}
+
+#list-wrap #music-list ul li {
+  padding-left: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#list-wrap #music-list ul li:hover {
+  color: #fff;
+  background: #000;
+}
+
+.active {
+  display: inline-block;
+  margin-left: -15px;
+  margin-right: 5px;
+  width: 10px;
+  height: 10px;
+  background: red;
+  animation: 4s linear infinite;
+  -webkit-animation: 4s linear infinite;
+  -moz-animation: 4s linear infinite;
+  -ms-aniamtion: 4s linear infinite;
+  -o-animation: 4s linear infinite;
+}
+
+/*播放控制*/
+#play-control {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 40px;
+}
+
+#ready {
+  height: 30px;
+}
+
+#ready button {
+  width: 70px;
+  height: 100%;
+}
+/*#error不单独设置display的话，歌曲全部删除时，不知道哪里关联的原因，error不能display:none*/
+#error {
+  display: none;
+}
+#volume {
+  width: 10px;
+  height: 100%;
+  background: #000;
+}
+
+.time {
+  position: absolute;
+  font-size: 12px;
+}
+
+#total {
+  top: 0;
+  right: 0;
+}
+
+#count {
+  right: 0;
+  bottom: 10px;
+}
+
+/*进度条*/
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 8px;
+  background: #009999;
+  cursor: pointer;
+}
+
+#progress {
+  width: 0;
+  height: 100%;
+  background: #000;
+}
+
+/*动画*/
+@keyframes play {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+    border-radius: 0;
+    background: red;
+  }
+
+  50% {
+    border-radius: 100%;
+    background: green;
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+    border-radius: 0;
+    background: red;
+  }
+
+}
