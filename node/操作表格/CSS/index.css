@@ -1,0 +1,134 @@
+    /* 公共属性 */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .flex {
+      display: flex;
+      flex: auto;
+    }
+
+    .align {
+      align-items: center;
+    }
+
+    .justify {
+      justify-content: space-between;
+    }
+    input[type=checkbox] {
+      cursor: pointer;
+    }
+    button:hover {
+      transition: .3s;
+      -webkit-transition: .3s;
+      -moz-transition: .3s;
+      -ms-transition: .3s;
+      -o-transition: .3s;
+      opacity: .8;
+    }
+
+    .wrap {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+    }
+    /* 输入模块 */
+    .type button {
+      width: 50px;
+      background: turquoise;
+      border: none;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      outline: none;
+      cursor: pointer;
+      align-self: stretch;
+    }
+    .type label {
+      font-weight: 700;
+    }
+    /* 排序模块 */
+    .func {
+      margin-top: 10px;
+    }
+    .func button {
+      padding: 2px 5px;
+      height: 30px;
+      background: tomato;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      cursor: pointer;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+    }
+    .func button:last-child {
+      margin-left: 30px;
+      background: rgb(201, 110, 6);
+      color: #fff;
+    }
+    .func button .arrow {
+      position: relative;
+      top: 10px;
+      width: 0;
+      height: 0;
+      border-width: 6px;
+      border-color: #fff transparent transparent transparent;
+      border-style: solid;
+    }
+    .func button .up {
+      top: -10px;
+      border-width: 6px;
+      border-color: transparent transparent #fff transparent;
+      border-style: solid;
+    }
+    .func .active {
+      color: #fff;
+      background: #000;
+    }
+    /* 表格 */
+    .table {
+      margin: 10px 0;
+    }
+    table {
+      width: 100%;
+      text-align: center;
+      border-collapse: collapse;
+    }
+
+    table th {
+      background: #ccc;
+    }
+
+    th input {
+      margin-left: 5px;
+    }
+    th,
+    td {
+      padding: 5px 20px;
+      border: 1px solid #000;
+    }
+    th input,
+    td input {
+      vertical-align: middle;
+    }
+    .btns {
+      width: 200px;
+    }
+    .btns button {
+      float: left;
+      width: 60px;
+    }
+    .btns button:not(:last-child) {
+      margin-right: 10px;
+    }

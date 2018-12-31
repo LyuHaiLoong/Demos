@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NODE小练习</title>
+  <link rel="stylesheet" href="CSS/index.css">
+</head>
+<!-- <link rel="stylesheet" href="CSS/index.css"> link标签会被node加载 -->
+
+<body>
+  <div class="wrap">
+    <div class="type flex align justify">
+      <div class="name">
+        <label for="name">姓名：</label>
+        <input type="text" id="name" placeholder="请输入姓名">
+      </div>
+      <div class="age">
+        <label for="age">年龄：</label>
+        <input type="text" id="age" placeholder="请输入年龄">
+      </div>
+      <div class="id">
+        <label for="id">工号：</label>
+        <input type="text" id="id" placeholder="请输入工号">
+      </div>
+      <button id="submit">添加</button>
+    </div>
+    <div class="func">
+      <button>工号排序<i class="arrow"></i></button>
+      <button>年龄排序<i class="arrow up"></i></button>
+      <button>批量删除</button>
+      <button>保存</button>
+    </div>
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>全选<input type="checkbox" id="sAll"></th>
+            <th>工号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="js/page/table.js"></script>
+  <script src="js/page/init.js"></script>
+  <script src="js/page/add.js"></script>
+  <script src="js/page/func.js"></script>
+  <script src="js/page/index.js"></script>
+</body>
+
+</html>
