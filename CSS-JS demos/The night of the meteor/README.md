@@ -1,4 +1,3 @@
-[toc]
 
 ### 1、效果图
 完整效果，请移步 [codepen-流星雨案例](https://codepen.io/HaiLoongLyu/full/Lgqbzy/)
