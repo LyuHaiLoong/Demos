@@ -1,9 +1,9 @@
 // 取消出text或number输入框外的其余标签的tabIndex
 // 不取消的话，当标签获取了tab切换的焦点时，回车会触发点击事件
-const allTag = document.getElementsByTagName("*");
-for (const v of allTag) {
-  if (!/text|number/.test(v.type)) v.tabIndex = -1;
-}
+// const allTag = document.getElementsByTagName("*");
+// for (const v of allTag) {
+//   if (!/text|number/.test(v.type)) v.tabIndex = -1;
+// }
 // 执行程序
 const add = new Add("#id", "#name", "#age", "#job", "#level", "#add"),
   save = new Save("#save"),
