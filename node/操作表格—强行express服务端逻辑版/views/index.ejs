@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="type bottom-line">
+      <label for="id">
+        工号：<input type="text" id="id">
+      </label>
+      <label for="name">
+        姓名：<input type="text" id="name">
+      </label>
+      <label for="age">
+        年龄：<input type="number" id="age" min="0">
+      </label>
+      <label for="job">
+        岗位：<input type="text" id="job">
+      </label>
+      <label for="level">
+        职级：<input type="text" id="level">
+      </label>
+      <div class="btns">
+        <button id="add">添加</button>
+        <button id="save">保存</button>
+      </div>
+    </div>
+    <div class="func flex bottom-line">
+      <button id="sortId">工号排序</button>
+      <button id="sortAge">年龄排序</button>
+      <button id="sortLevel">职级排序</button>
+      <select name="order" id="order" disabled>
+        <option value="0">由高到低</option>
+        <option value="1">由低到高</option>
+      </select>
+      <label for="checked">
+        <input type="radio" name="choose" id="checked">已选
+      </label>
+      <label for="unchecked">
+        <input type="radio" name="choose" id="unchecked">未选
+      </label>
+      <label for="all">
+        <input type="radio" name="choose" id="all" checked>全部
+      </label>
+      <div class="btns">
+        <button id="del">批量删除</button>
+        <button id="delAll">清空</button>
+      </div>
+    </div>
+    <table id="table">
+      <caption>员工信息表</caption>
+      <thead>
+        <tr>
+          <th><label for="sAll">全选<input type="checkbox" name="all" id="sAll"></label></th>
+          <th>工号</th>
+          <th>姓名</th>
+          <th>年龄</th>
+          <th>岗位</th>
+          <th>职级</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%- data %>
+      </tbody>
+    </table>
+    <script src="/javascripts/super.js"></script>
+    <script src="/javascripts/save.js"></script>
+    <script src="/javascripts/sort.js"></script>
+    <script src="/javascripts/shown.js"></script>
+    <script src="/javascripts/add.js"></script>
+    <script src="/javascripts/del.js"></script>
+    <script src="/javascripts/check.js"></script>
+    <script src="/javascripts/edit.js"></script>
+    <script src="/javascripts/order.js"></script>
+    <script src="/javascripts/index.js"></script>
+  </div>
+</body>
+
+</html>

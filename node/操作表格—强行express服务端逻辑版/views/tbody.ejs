@@ -1,0 +1,29 @@
+<% for(let i = 0;i < data.list.length;i++){ %>
+<tr>
+  <td data-value=<%=data.list[i].checked %>><input type="checkbox" name="all" %>
+    <%= +data.list[i].checked ? "checked" : "" %>></td>
+  <td data-value=<%=data.list[i].id %>>
+    <%= data.list[i].id %>
+  </td>
+  <td data-value=<%=data.list[i].name %>>
+    <%= data.list[i].name %>
+  </td>
+  <td data-value=<%=data.list[i].age %>>
+    <%= data.list[i].age %>
+  </td>
+  <td data-value=<%=data.list[i].job %>>
+    <%= data.list[i].job %>
+  </td>
+  <td data-value=<%=data.list[i].level %>>
+    <%= data.list[i].level %>
+  </td>
+  <td>
+    <button class="up">
+      <%= renderStatic[0] %></button>
+    <button class="down">
+      <%= renderStatic[1] %></button>
+    <button class="del">
+      <%= renderStatic[2] %></button>
+  </td>
+</tr>
+<% } %>
