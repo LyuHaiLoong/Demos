@@ -1,0 +1,30 @@
+* {
+  border-radius: 0!important;
+  -webkit-border-radius: 0!important;
+  -moz-border-radius: 0!important;
+  -ms-border-radius: 0!important;
+  -o-border-radius: 0!important;
+}
+p{
+  margin: 0;
+}
+:focus{
+  box-shadow: none;
+}
+.checked{
+  position: relative;
+  opacity: .5;
+}
+.checked::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -2px;
+  width: 100%;
+  height: 2px;
+  background: #000;
+}
+.container{
+  min-width: 400px;
+}
