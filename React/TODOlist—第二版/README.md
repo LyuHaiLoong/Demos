@@ -1,4 +1,4 @@
-### React小练习——TODOlist，Redux + TS版
+### React小练习——TodoList，Redux + TS版
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;React入门练习——TODOlist，使用TypeScript + Redux编写，未做UI美化，着重于Redux与TS的逻辑结合，封装Action及Reducer的creator函数，减少了模板代码，进行reducer切片，优化了代码结构及可读性。
 
 > 实现功能
