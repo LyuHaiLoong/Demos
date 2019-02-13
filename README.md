@@ -13,8 +13,8 @@ All the demos that I coded when I learned HTML,CSS and JS.
 - [歌曲播放小demo-功能全面](https://github.com/LyuHaiLoong/Demos/tree/master/CSS-JS%20demos/%E6%AD%8C%E6%9B%B2%E6%92%AD%E6%94%BE%E5%B0%8Fdemo)
 
 ## React demos
-- [TodoList-1-CSS IN JS版](https://github.com/LyuHaiLoong/Demos/tree/master/React/TODOlist%E2%80%94%E7%AC%AC%E4%B8%80%E7%89%88)
-- [TodoList-1-Redux + TypeScript版](https://github.com/LyuHaiLoong/Demos/tree/master/React/TODOlist%E2%80%94%E7%AC%AC%E4%BA%8C%E7%89%88)
+- [TodoList-1-styled-components（CSS-in-JS）版](https://github.com/LyuHaiLoong/Demos/tree/master/React/TODOlist%E2%80%94%E7%AC%AC%E4%B8%80%E7%89%88)
+- [TodoList-2-Redux + TypeScript版](https://github.com/LyuHaiLoong/Demos/tree/master/React/TODOlist%E2%80%94%E7%AC%AC%E4%BA%8C%E7%89%88)
 
 ## Node demos
 - [操作表格—客户端逻辑版](https://github.com/LyuHaiLoong/Demos/tree/master/node/%E6%93%8D%E4%BD%9C%E8%A1%A8%E6%A0%BC%E2%80%94%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%80%BB%E8%BE%91%E7%89%88)
